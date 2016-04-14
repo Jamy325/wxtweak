@@ -1,0 +1,342 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		35B4E29F1CBF801800029275 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35B4E29E1CBF801800029275 /* Foundation.framework */; };
+		35B4E2AA1CBF801800029275 /* wxtweak.mm in Sources */ = {isa = PBXBuildFile; fileRef = 35B4E2A91CBF801800029275 /* wxtweak.mm */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		35B4E29B1CBF801800029275 /* wxtweak.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = wxtweak.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		35B4E29E1CBF801800029275 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		35B4E2A31CBF801800029275 /* control.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = control.txt; path = Package/DEBIAN/control.txt; sourceTree = "<group>"; };
+		35B4E2A41CBF801800029275 /* control */ = {isa = PBXFileReference; lastKnownFileType = text; name = control; path = Package/DEBIAN/control; sourceTree = "<group>"; };
+		35B4E2A61CBF801800029275 /* PackageVersion.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = PackageVersion.plist; sourceTree = "<group>"; };
+		35B4E2A71CBF801800029275 /* wxtweak-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "wxtweak-Prefix.pch"; sourceTree = "<group>"; };
+		35B4E2A81CBF801800029275 /* wxtweak.xm */ = {isa = PBXFileReference; lastKnownFileType = text; path = wxtweak.xm; sourceTree = "<group>"; };
+		35B4E2A91CBF801800029275 /* wxtweak.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = wxtweak.mm; sourceTree = "<group>"; };
+		35B4E2AE1CBF801800029275 /* wxtweak.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = wxtweak.plist; path = Package/Library/MobileSubstrate/DynamicLibraries/wxtweak.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		35B4E2971CBF801800029275 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				35B4E29F1CBF801800029275 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		35B4E2901CBF801800029275 = {
+			isa = PBXGroup;
+			children = (
+				35B4E2A01CBF801800029275 /* wxtweak */,
+				35B4E29D1CBF801800029275 /* Frameworks */,
+				35B4E29C1CBF801800029275 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		35B4E29C1CBF801800029275 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				35B4E29B1CBF801800029275 /* wxtweak.dylib */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		35B4E29D1CBF801800029275 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				35B4E29E1CBF801800029275 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		35B4E2A01CBF801800029275 /* wxtweak */ = {
+			isa = PBXGroup;
+			children = (
+				35B4E2A81CBF801800029275 /* wxtweak.xm */,
+				35B4E2A91CBF801800029275 /* wxtweak.mm */,
+				35B4E2A11CBF801800029275 /* Package */,
+				35B4E2A51CBF801800029275 /* Supporting Files */,
+			);
+			path = wxtweak;
+			sourceTree = "<group>";
+		};
+		35B4E2A11CBF801800029275 /* Package */ = {
+			isa = PBXGroup;
+			children = (
+				35B4E2A21CBF801800029275 /* DEBIAN */,
+				35B4E2AB1CBF801800029275 /* Library */,
+			);
+			name = Package;
+			sourceTree = "<group>";
+		};
+		35B4E2A21CBF801800029275 /* DEBIAN */ = {
+			isa = PBXGroup;
+			children = (
+				35B4E2A31CBF801800029275 /* control.txt */,
+				35B4E2A41CBF801800029275 /* control */,
+			);
+			name = DEBIAN;
+			sourceTree = "<group>";
+		};
+		35B4E2A51CBF801800029275 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				35B4E2A61CBF801800029275 /* PackageVersion.plist */,
+				35B4E2A71CBF801800029275 /* wxtweak-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		35B4E2AB1CBF801800029275 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				35B4E2AC1CBF801800029275 /* MobileSubstrate */,
+			);
+			name = Library;
+			sourceTree = "<group>";
+		};
+		35B4E2AC1CBF801800029275 /* MobileSubstrate */ = {
+			isa = PBXGroup;
+			children = (
+				35B4E2AD1CBF801800029275 /* DynamicLibraries */,
+			);
+			name = MobileSubstrate;
+			sourceTree = "<group>";
+		};
+		35B4E2AD1CBF801800029275 /* DynamicLibraries */ = {
+			isa = PBXGroup;
+			children = (
+				35B4E2AE1CBF801800029275 /* wxtweak.plist */,
+			);
+			name = DynamicLibraries;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		35B4E2981CBF801800029275 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		35B4E29A1CBF801800029275 /* wxtweak */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 35B4E2B11CBF801800029275 /* Build configuration list for PBXNativeTarget "wxtweak" */;
+			buildPhases = (
+				35B4E2951CBF801800029275 /* ShellScript */,
+				35B4E2961CBF801800029275 /* Sources */,
+				35B4E2971CBF801800029275 /* Frameworks */,
+				35B4E2981CBF801800029275 /* Headers */,
+				35B4E2991CBF801800029275 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = wxtweak;
+			productName = wxtweak;
+			productReference = 35B4E29B1CBF801800029275 /* wxtweak.dylib */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		35B4E2911CBF801800029275 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+			};
+			buildConfigurationList = 35B4E2941CBF801800029275 /* Build configuration list for PBXProject "wxtweak" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 35B4E2901CBF801800029275;
+			productRefGroup = 35B4E29C1CBF801800029275 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				35B4E29A1CBF801800029275 /* wxtweak */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		35B4E2951CBF801800029275 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/opt/iOSOpenDev/bin/iosod --xcbp-logos";
+		};
+		35B4E2991CBF801800029275 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/opt/iOSOpenDev/bin/iosod --xcbp";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		35B4E2961CBF801800029275 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				35B4E2AA1CBF801800029275 /* wxtweak.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		35B4E2AF1CBF801800029275 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				COPY_PHASE_STRIP = NO;
+				EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES = "*.nib *.lproj *.gch (*) .DS_Store CVS .svn .git .hg *.xcodeproj *.xcode *.pbproj *.pbxproj";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(iOSOpenDevPath)/frameworks/**",
+					"$(SDKROOT)/System/Library/PrivateFrameworks",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(iOSOpenDevPath)/include/**";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				LIBRARY_SEARCH_PATHS = "$(iOSOpenDevPath)/lib/**";
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = NO;
+				iOSOpenDevPath = /opt/iOSOpenDev;
+			};
+			name = Debug;
+		};
+		35B4E2B01CBF801800029275 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				COPY_PHASE_STRIP = YES;
+				EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES = "*.nib *.lproj *.gch (*) .DS_Store CVS .svn .git .hg *.xcodeproj *.xcode *.pbproj *.pbxproj";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(iOSOpenDevPath)/frameworks/**",
+					"$(SDKROOT)/System/Library/PrivateFrameworks",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(iOSOpenDevPath)/include/**";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				LIBRARY_SEARCH_PATHS = "$(iOSOpenDevPath)/lib/**";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				iOSOpenDevPath = /opt/iOSOpenDev;
+			};
+			name = Release;
+		};
+		35B4E2B21CBF801800029275 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "wxtweak/wxtweak-Prefix.pch";
+				INSTALL_PATH = /Library/MobileSubstrate/DynamicLibraries;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				iOSOpenDevBuildPackageOnAnyBuild = NO;
+				iOSOpenDevCopyOnBuild = NO;
+				iOSOpenDevDevice = "";
+				iOSOpenDevInstallOnAnyBuild = NO;
+				iOSOpenDevInstallOnProfiling = YES;
+				iOSOpenDevRespringOnInstall = YES;
+				iOSOpenDevUsePackageVersionPList = YES;
+			};
+			name = Debug;
+		};
+		35B4E2B31CBF801800029275 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "wxtweak/wxtweak-Prefix.pch";
+				INSTALL_PATH = /Library/MobileSubstrate/DynamicLibraries;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				iOSOpenDevBuildPackageOnAnyBuild = NO;
+				iOSOpenDevCopyOnBuild = NO;
+				iOSOpenDevDevice = "";
+				iOSOpenDevInstallOnAnyBuild = NO;
+				iOSOpenDevInstallOnProfiling = YES;
+				iOSOpenDevRespringOnInstall = YES;
+				iOSOpenDevUsePackageVersionPList = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		35B4E2941CBF801800029275 /* Build configuration list for PBXProject "wxtweak" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				35B4E2AF1CBF801800029275 /* Debug */,
+				35B4E2B01CBF801800029275 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		35B4E2B11CBF801800029275 /* Build configuration list for PBXNativeTarget "wxtweak" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				35B4E2B21CBF801800029275 /* Debug */,
+				35B4E2B31CBF801800029275 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 35B4E2911CBF801800029275 /* Project object */;
+}
