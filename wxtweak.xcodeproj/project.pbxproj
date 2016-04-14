@@ -195,7 +195,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "/opt/iOSOpenDev/bin/iosod --xcbp";
+			shellScript = "/opt/iOSOpenDev/bin/iosod --xcbp-logos";
 		};
 		35B4E2991CBF801800029275 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -299,7 +299,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 2;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "wxtweak/wxtweak-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
@@ -329,7 +329,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 2;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "wxtweak/wxtweak-Prefix.pch";
 				HEADER_SEARCH_PATHS = (

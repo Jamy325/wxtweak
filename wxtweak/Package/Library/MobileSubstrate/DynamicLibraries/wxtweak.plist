@@ -4,9 +4,15 @@
 <dict>
 	<key>Filter</key>
 	<dict>
+		<key>Mode</key>
+		<string>any</string>
+		<key>Executables</key>
+		<array>
+			<string>wechat</string>
+		</array>
 		<key>Bundles</key>
 		<array>
-			<string>*.tecent.xin</string>
+			<string>P44.tencent.xin</string>
 		</array>
 	</dict>
 </dict>
