@@ -8,11 +8,7 @@
 		<string>any</string>
 		<key>Executables</key>
 		<array>
-			<string>wechat</string>
-		</array>
-		<key>Bundles</key>
-		<array>
-			<string>P44.tencent.xin</string>
+			<string>WeChat</string>
 		</array>
 	</dict>
 </dict>
