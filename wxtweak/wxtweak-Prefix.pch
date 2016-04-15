@@ -1,9 +1,7 @@
 //
 // Prefix header for all source files of the 'wxtweak' target in the 'wxtweak' project
 //
-//#import "Prefix.pch"
-#ifdef __OBJC__
-    #import <Foundation/Foundation.h>
-#endif
+
+#import <Foundation/Foundation.h>
 #define THEOS_INSTANCE_NAME "wctweak"
 #import "/opt/theos/Prefix.pch"

@@ -4,8 +4,6 @@
 <dict>
 	<key>Filter</key>
 	<dict>
-		<key>Mode</key>
-		<string>any</string>
 		<key>Executables</key>
 		<array>
 			<string>WeChat</string>

@@ -10,6 +10,8 @@
 		35B4E29F1CBF801800029275 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35B4E29E1CBF801800029275 /* Foundation.framework */; };
 		35B4E2AA1CBF801800029275 /* wxtweak.mm in Sources */ = {isa = PBXBuildFile; fileRef = 35B4E2A91CBF801800029275 /* wxtweak.mm */; };
 		35B4E2B51CBF83A300029275 /* libsubstrate.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 35B4E2B41CBF83A300029275 /* libsubstrate.dylib */; };
+		35C924A81CC0DE75006CE955 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35C924A71CC0DE75006CE955 /* UIKit.framework */; };
+		35C956D51CC0F9F5006CE955 /* iConsole.mm in Sources */ = {isa = PBXBuildFile; fileRef = 35C956D41CC0F9F5006CE955 /* iConsole.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +25,12 @@
 		35B4E2A91CBF801800029275 /* wxtweak.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = wxtweak.mm; sourceTree = "<group>"; };
 		35B4E2AE1CBF801800029275 /* wxtweak.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = wxtweak.plist; path = Package/Library/MobileSubstrate/DynamicLibraries/wxtweak.plist; sourceTree = "<group>"; };
 		35B4E2B41CBF83A300029275 /* libsubstrate.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsubstrate.dylib; path = ../../../../opt/iOSOpenDev/lib/libsubstrate.dylib; sourceTree = "<group>"; };
+		35C924A71CC0DE75006CE955 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		35C924A91CC0ED53006CE955 /* MMService.xm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MMService.xm; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		35C924AA1CC0EDCA006CE955 /* CMessageDB.xm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CMessageDB.xm; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		35C924AB1CC0EDCA006CE955 /* CMessageMgr.xm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CMessageMgr.xm; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		35C924B01CC0F072006CE955 /* iConsole.xm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = iConsole.xm; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		35C956D41CC0F9F5006CE955 /* iConsole.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = iConsole.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -30,6 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35C924A81CC0DE75006CE955 /* UIKit.framework in Frameworks */,
 				35B4E2B51CBF83A300029275 /* libsubstrate.dylib in Frameworks */,
 				35B4E29F1CBF801800029275 /* Foundation.framework in Frameworks */,
 			);
@@ -58,6 +67,7 @@
 		35B4E29D1CBF801800029275 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				35C924A71CC0DE75006CE955 /* UIKit.framework */,
 				35B4E2B41CBF83A300029275 /* libsubstrate.dylib */,
 				35B4E29E1CBF801800029275 /* Foundation.framework */,
 			);
@@ -67,6 +77,11 @@
 		35B4E2A01CBF801800029275 /* wxtweak */ = {
 			isa = PBXGroup;
 			children = (
+				35C956D41CC0F9F5006CE955 /* iConsole.mm */,
+				35C924B01CC0F072006CE955 /* iConsole.xm */,
+				35C924AA1CC0EDCA006CE955 /* CMessageDB.xm */,
+				35C924AB1CC0EDCA006CE955 /* CMessageMgr.xm */,
+				35C924A91CC0ED53006CE955 /* MMService.xm */,
 				35B4E2A81CBF801800029275 /* wxtweak.xm */,
 				35B4E2A91CBF801800029275 /* wxtweak.mm */,
 				35B4E2A11CBF801800029275 /* Package */,
@@ -218,6 +233,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				35B4E2AA1CBF801800029275 /* wxtweak.mm in Sources */,
+				35C956D51CC0F9F5006CE955 /* iConsole.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,6 +243,7 @@
 		35B4E2AF1CBF801800029275 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_MODULES = YES;
 				COPY_PHASE_STRIP = NO;
 				EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES = "*.nib *.lproj *.gch (*) .DS_Store CVS .svn .git .hg *.xcodeproj *.xcode *.pbproj *.pbxproj";
@@ -250,6 +267,7 @@
 					"/opt/theos/vendor/**",
 					"/opt/theos/**",
 					"/opt/theos/vendor/include/**",
+					"/Users/jamy/works/wx/**",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LIBRARY_SEARCH_PATHS = "$(iOSOpenDevPath)/lib/**";
@@ -266,6 +284,7 @@
 		35B4E2B01CBF801800029275 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_MODULES = YES;
 				COPY_PHASE_STRIP = YES;
 				EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES = "*.nib *.lproj *.gch (*) .DS_Store CVS .svn .git .hg *.xcodeproj *.xcode *.pbproj *.pbxproj";
@@ -282,6 +301,7 @@
 					"/opt/theos/vendor/**",
 					"/opt/theos/**",
 					"/opt/theos/vendor/include/**",
+					"/Users/jamy/works/wx/**",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LIBRARY_SEARCH_PATHS = "$(iOSOpenDevPath)/lib/**";
