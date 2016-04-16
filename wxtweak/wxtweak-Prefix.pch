@@ -5,3 +5,6 @@
 #import <Foundation/Foundation.h>
 #define THEOS_INSTANCE_NAME "wctweak"
 #import "/opt/theos/Prefix.pch"
+
+#undef HBLogDebug
+#define HBLogDebug(...) NSLog(@"%s-%d", __FILE__,__LINE__);NSLog(__VA_ARGS__);

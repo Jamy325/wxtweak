@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		351088061CC127BB00176DDE /* CMessageDB.mm in Sources */ = {isa = PBXBuildFile; fileRef = 351088041CC127BB00176DDE /* CMessageDB.mm */; };
+		351088071CC127BB00176DDE /* CMessageMgr.mm in Sources */ = {isa = PBXBuildFile; fileRef = 351088051CC127BB00176DDE /* CMessageMgr.mm */; };
+		3510880A1CC14D0A00176DDE /* ClickStreamMgr.mm in Sources */ = {isa = PBXBuildFile; fileRef = 351088091CC14D0A00176DDE /* ClickStreamMgr.mm */; };
 		35B4E29F1CBF801800029275 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35B4E29E1CBF801800029275 /* Foundation.framework */; };
 		35B4E2AA1CBF801800029275 /* wxtweak.mm in Sources */ = {isa = PBXBuildFile; fileRef = 35B4E2A91CBF801800029275 /* wxtweak.mm */; };
 		35B4E2B51CBF83A300029275 /* libsubstrate.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 35B4E2B41CBF83A300029275 /* libsubstrate.dylib */; };
@@ -15,6 +18,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		351088041CC127BB00176DDE /* CMessageDB.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CMessageDB.mm; sourceTree = "<group>"; };
+		351088051CC127BB00176DDE /* CMessageMgr.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CMessageMgr.mm; sourceTree = "<group>"; };
+		351088081CC14BE500176DDE /* ClickStreamMgr.xm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ClickStreamMgr.xm; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		351088091CC14D0A00176DDE /* ClickStreamMgr.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ClickStreamMgr.mm; sourceTree = "<group>"; };
 		35B4E29B1CBF801800029275 /* wxtweak.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = wxtweak.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		35B4E29E1CBF801800029275 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		35B4E2A31CBF801800029275 /* control.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = control.txt; path = Package/DEBIAN/control.txt; sourceTree = "<group>"; };
@@ -26,7 +33,6 @@
 		35B4E2AE1CBF801800029275 /* wxtweak.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = wxtweak.plist; path = Package/Library/MobileSubstrate/DynamicLibraries/wxtweak.plist; sourceTree = "<group>"; };
 		35B4E2B41CBF83A300029275 /* libsubstrate.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsubstrate.dylib; path = ../../../../opt/iOSOpenDev/lib/libsubstrate.dylib; sourceTree = "<group>"; };
 		35C924A71CC0DE75006CE955 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		35C924A91CC0ED53006CE955 /* MMService.xm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MMService.xm; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		35C924AA1CC0EDCA006CE955 /* CMessageDB.xm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CMessageDB.xm; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		35C924AB1CC0EDCA006CE955 /* CMessageMgr.xm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CMessageMgr.xm; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		35C924B01CC0F072006CE955 /* iConsole.xm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = iConsole.xm; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
@@ -77,11 +83,14 @@
 		35B4E2A01CBF801800029275 /* wxtweak */ = {
 			isa = PBXGroup;
 			children = (
+				351088091CC14D0A00176DDE /* ClickStreamMgr.mm */,
+				351088081CC14BE500176DDE /* ClickStreamMgr.xm */,
+				351088051CC127BB00176DDE /* CMessageMgr.mm */,
+				351088041CC127BB00176DDE /* CMessageDB.mm */,
 				35C956D41CC0F9F5006CE955 /* iConsole.mm */,
 				35C924B01CC0F072006CE955 /* iConsole.xm */,
 				35C924AA1CC0EDCA006CE955 /* CMessageDB.xm */,
 				35C924AB1CC0EDCA006CE955 /* CMessageMgr.xm */,
-				35C924A91CC0ED53006CE955 /* MMService.xm */,
 				35B4E2A81CBF801800029275 /* wxtweak.xm */,
 				35B4E2A91CBF801800029275 /* wxtweak.mm */,
 				35B4E2A11CBF801800029275 /* Package */,
@@ -232,7 +241,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				351088071CC127BB00176DDE /* CMessageMgr.mm in Sources */,
+				351088061CC127BB00176DDE /* CMessageDB.mm in Sources */,
 				35B4E2AA1CBF801800029275 /* wxtweak.mm in Sources */,
+				3510880A1CC14D0A00176DDE /* ClickStreamMgr.mm in Sources */,
 				35C956D51CC0F9F5006CE955 /* iConsole.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
