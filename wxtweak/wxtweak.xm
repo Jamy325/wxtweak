@@ -619,6 +619,16 @@ void UncaughtExceptionHandler(NSException* exception)
 %end
 
 
+%hook NSBundle
+- (NSString *)bundleIdentifier
+{
+    %log;
+    NSString* old = %orig;
+    NSLog(@"bundle id :%@, change to com.tencent.xin", old);
+    return old;
+}
+%end
+
 
 
 

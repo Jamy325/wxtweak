@@ -13,8 +13,8 @@
 
 + (void)logToFile:(int)arg1 module:(const char *)arg2 file:(const char *)arg3 line:(int)arg4 func:(const char *)arg5 message:(id)arg6 
 {
-    //%log;∫
-    NSLog(@"%d-%s-%s-%d-%s-%@", arg1, arg2, arg3,arg4,arg5,arg6);
+    NSLog(@"%d-%s-%s-%d-%s-%@", arg1, arg2, arg3, arg4, arg5, arg6);
+    
     %orig(arg1, arg2, arg3, arg4, arg5, arg6);
    }
   /*

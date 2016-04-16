@@ -38,8 +38,13 @@ static _Bool _logos_meta_method$_ungrouped$iConsole$shouldLog$(_LOGOS_SELF_TYPE_
 
 
 static void _logos_meta_method$_ungrouped$iConsole$logToFile$module$file$line$func$message$(_LOGOS_SELF_TYPE_NORMAL Class _LOGOS_SELF_CONST self, SEL _cmd, int arg1, const char * arg2, const char * arg3, int arg4, const char * arg5, id arg6)  {
+<<<<<<< HEAD
     
     NSLog(@"%d-%s-%s-%d-%s-%@", arg1, arg2, arg3,arg4,arg5,arg6);
+=======
+    NSLog(@"%d-%s-%s-%d-%s-%@", arg1, arg2, arg3, arg4, arg5, arg6);
+    
+>>>>>>> 7575f64e1a8b1241c725bd978be0fc75c0264781
     _logos_meta_orig$_ungrouped$iConsole$logToFile$module$file$line$func$message$(self, _cmd, arg1, arg2, arg3, arg4, arg5, arg6);
    }
   
