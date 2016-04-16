@@ -5,3 +5,13 @@
 #import <Foundation/Foundation.h>
 #define THEOS_INSTANCE_NAME "wctweak"
 #import "/opt/theos/Prefix.pch"
+
+
+#undef HBLogDebug
+#define LOGSTACK() NSLog(@"%@",[NSThread callStackSymbols]);
+
+#ifdef DEBUG
+#define HBLogDebug(...) do { NSLog(@"function:%s", __FUNCTION__);NSLog(__VA_ARGS__); }while(0)
+#else
+#define HBLogDebug(...) 
+#endif

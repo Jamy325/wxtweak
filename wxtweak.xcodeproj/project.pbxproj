@@ -10,6 +10,14 @@
 		35B4E29F1CBF801800029275 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35B4E29E1CBF801800029275 /* Foundation.framework */; };
 		35B4E2AA1CBF801800029275 /* wxtweak.mm in Sources */ = {isa = PBXBuildFile; fileRef = 35B4E2A91CBF801800029275 /* wxtweak.mm */; };
 		35B4E2B51CBF83A300029275 /* libsubstrate.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 35B4E2B41CBF83A300029275 /* libsubstrate.dylib */; };
+		35BDFAFB1CC2071700FC0C87 /* CMessageDB.mm in Sources */ = {isa = PBXBuildFile; fileRef = 35BDFAFA1CC2071700FC0C87 /* CMessageDB.mm */; };
+		35BDFAFD1CC2071D00FC0C87 /* CMessageMgr.mm in Sources */ = {isa = PBXBuildFile; fileRef = 35BDFAFC1CC2071D00FC0C87 /* CMessageMgr.mm */; };
+		35BDFB001CC207DB00FC0C87 /* MMDumpReportMgr.mm in Sources */ = {isa = PBXBuildFile; fileRef = 35BDFAFF1CC207DB00FC0C87 /* MMDumpReportMgr.mm */; };
+		35BDFB031CC2138200FC0C87 /* ClickStreamMgr.mm in Sources */ = {isa = PBXBuildFile; fileRef = 35BDFB021CC2138200FC0C87 /* ClickStreamMgr.mm */; };
+		35BDFB061CC21B4300FC0C87 /* CUtility.mm in Sources */ = {isa = PBXBuildFile; fileRef = 35BDFB051CC21B4300FC0C87 /* CUtility.mm */; };
+		35BDFB091CC22F4D00FC0C87 /* MMMonitorMgr.mm in Sources */ = {isa = PBXBuildFile; fileRef = 35BDFB081CC22F4D00FC0C87 /* MMMonitorMgr.mm */; };
+		35BDFB0C1CC231DD00FC0C87 /* AppDataMgr.mm in Sources */ = {isa = PBXBuildFile; fileRef = 35BDFB0B1CC231DD00FC0C87 /* AppDataMgr.mm */; };
+		35BDFB0F1CC2371A00FC0C87 /* GameStatMgr.mm in Sources */ = {isa = PBXBuildFile; fileRef = 35BDFB0E1CC2371A00FC0C87 /* GameStatMgr.mm */; };
 		35C924A81CC0DE75006CE955 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35C924A71CC0DE75006CE955 /* UIKit.framework */; };
 		35C956D51CC0F9F5006CE955 /* iConsole.mm in Sources */ = {isa = PBXBuildFile; fileRef = 35C956D41CC0F9F5006CE955 /* iConsole.mm */; };
 /* End PBXBuildFile section */
@@ -25,6 +33,20 @@
 		35B4E2A91CBF801800029275 /* wxtweak.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = wxtweak.mm; sourceTree = "<group>"; };
 		35B4E2AE1CBF801800029275 /* wxtweak.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = wxtweak.plist; path = Package/Library/MobileSubstrate/DynamicLibraries/wxtweak.plist; sourceTree = "<group>"; };
 		35B4E2B41CBF83A300029275 /* libsubstrate.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsubstrate.dylib; path = ../../../../opt/iOSOpenDev/lib/libsubstrate.dylib; sourceTree = "<group>"; };
+		35BDFAFA1CC2071700FC0C87 /* CMessageDB.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CMessageDB.mm; sourceTree = "<group>"; };
+		35BDFAFC1CC2071D00FC0C87 /* CMessageMgr.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CMessageMgr.mm; sourceTree = "<group>"; };
+		35BDFAFE1CC2072D00FC0C87 /* MMDumpReportMgr.xm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MMDumpReportMgr.xm; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		35BDFAFF1CC207DB00FC0C87 /* MMDumpReportMgr.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MMDumpReportMgr.mm; sourceTree = "<group>"; };
+		35BDFB011CC2129600FC0C87 /* ClickStreamMgr.xm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ClickStreamMgr.xm; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		35BDFB021CC2138200FC0C87 /* ClickStreamMgr.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ClickStreamMgr.mm; sourceTree = "<group>"; };
+		35BDFB041CC21AF700FC0C87 /* CUtility.xm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CUtility.xm; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		35BDFB051CC21B4300FC0C87 /* CUtility.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CUtility.mm; sourceTree = "<group>"; };
+		35BDFB071CC22E8B00FC0C87 /* MMMonitorMgr.xm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MMMonitorMgr.xm; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		35BDFB081CC22F4D00FC0C87 /* MMMonitorMgr.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MMMonitorMgr.mm; sourceTree = "<group>"; };
+		35BDFB0A1CC2318100FC0C87 /* AppDataMgr.xm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDataMgr.xm; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		35BDFB0B1CC231DD00FC0C87 /* AppDataMgr.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDataMgr.mm; sourceTree = "<group>"; };
+		35BDFB0D1CC236C000FC0C87 /* GameStatMgr.xm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GameStatMgr.xm; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		35BDFB0E1CC2371A00FC0C87 /* GameStatMgr.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GameStatMgr.mm; sourceTree = "<group>"; };
 		35C924A71CC0DE75006CE955 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		35C924A91CC0ED53006CE955 /* MMService.xm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MMService.xm; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		35C924AA1CC0EDCA006CE955 /* CMessageDB.xm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CMessageDB.xm; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
@@ -77,6 +99,20 @@
 		35B4E2A01CBF801800029275 /* wxtweak */ = {
 			isa = PBXGroup;
 			children = (
+				35BDFB0E1CC2371A00FC0C87 /* GameStatMgr.mm */,
+				35BDFB0D1CC236C000FC0C87 /* GameStatMgr.xm */,
+				35BDFB0B1CC231DD00FC0C87 /* AppDataMgr.mm */,
+				35BDFB0A1CC2318100FC0C87 /* AppDataMgr.xm */,
+				35BDFB081CC22F4D00FC0C87 /* MMMonitorMgr.mm */,
+				35BDFB071CC22E8B00FC0C87 /* MMMonitorMgr.xm */,
+				35BDFB051CC21B4300FC0C87 /* CUtility.mm */,
+				35BDFB041CC21AF700FC0C87 /* CUtility.xm */,
+				35BDFB021CC2138200FC0C87 /* ClickStreamMgr.mm */,
+				35BDFB011CC2129600FC0C87 /* ClickStreamMgr.xm */,
+				35BDFAFF1CC207DB00FC0C87 /* MMDumpReportMgr.mm */,
+				35BDFAFE1CC2072D00FC0C87 /* MMDumpReportMgr.xm */,
+				35BDFAFC1CC2071D00FC0C87 /* CMessageMgr.mm */,
+				35BDFAFA1CC2071700FC0C87 /* CMessageDB.mm */,
 				35C956D41CC0F9F5006CE955 /* iConsole.mm */,
 				35C924B01CC0F072006CE955 /* iConsole.xm */,
 				35C924AA1CC0EDCA006CE955 /* CMessageDB.xm */,
@@ -232,8 +268,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35BDFAFD1CC2071D00FC0C87 /* CMessageMgr.mm in Sources */,
+				35BDFAFB1CC2071700FC0C87 /* CMessageDB.mm in Sources */,
+				35BDFB0C1CC231DD00FC0C87 /* AppDataMgr.mm in Sources */,
+				35BDFB061CC21B4300FC0C87 /* CUtility.mm in Sources */,
+				35BDFB0F1CC2371A00FC0C87 /* GameStatMgr.mm in Sources */,
+				35BDFB001CC207DB00FC0C87 /* MMDumpReportMgr.mm in Sources */,
+				35BDFB031CC2138200FC0C87 /* ClickStreamMgr.mm in Sources */,
 				35B4E2AA1CBF801800029275 /* wxtweak.mm in Sources */,
 				35C956D51CC0F9F5006CE955 /* iConsole.mm in Sources */,
+				35BDFB091CC22F4D00FC0C87 /* MMMonitorMgr.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
