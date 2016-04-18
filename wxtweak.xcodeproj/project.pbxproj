@@ -18,6 +18,10 @@
 		35BDFB091CC22F4D00FC0C87 /* MMMonitorMgr.mm in Sources */ = {isa = PBXBuildFile; fileRef = 35BDFB081CC22F4D00FC0C87 /* MMMonitorMgr.mm */; };
 		35BDFB0C1CC231DD00FC0C87 /* AppDataMgr.mm in Sources */ = {isa = PBXBuildFile; fileRef = 35BDFB0B1CC231DD00FC0C87 /* AppDataMgr.mm */; };
 		35BDFB0F1CC2371A00FC0C87 /* GameStatMgr.mm in Sources */ = {isa = PBXBuildFile; fileRef = 35BDFB0E1CC2371A00FC0C87 /* GameStatMgr.mm */; };
+		35BDFB121CC4D23C00FC0C87 /* DeviceInfo.mm in Sources */ = {isa = PBXBuildFile; fileRef = 35BDFB111CC4D23C00FC0C87 /* DeviceInfo.mm */; };
+		35BDFB151CC4E0D100FC0C87 /* Q2DMapStatistics.mm in Sources */ = {isa = PBXBuildFile; fileRef = 35BDFB141CC4E0D100FC0C87 /* Q2DMapStatistics.mm */; };
+		35BDFB1A1CC4E44100FC0C87 /* WCAppInfo.mm in Sources */ = {isa = PBXBuildFile; fileRef = 35BDFB191CC4E44100FC0C87 /* WCAppInfo.mm */; };
+		35BDFB1D1CC4E4F400FC0C87 /* WCDeviceuserSportDevice.mm in Sources */ = {isa = PBXBuildFile; fileRef = 35BDFB1C1CC4E4F400FC0C87 /* WCDeviceuserSportDevice.mm */; };
 		35C924A81CC0DE75006CE955 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35C924A71CC0DE75006CE955 /* UIKit.framework */; };
 		35C956D51CC0F9F5006CE955 /* iConsole.mm in Sources */ = {isa = PBXBuildFile; fileRef = 35C956D41CC0F9F5006CE955 /* iConsole.mm */; };
 /* End PBXBuildFile section */
@@ -47,6 +51,14 @@
 		35BDFB0B1CC231DD00FC0C87 /* AppDataMgr.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDataMgr.mm; sourceTree = "<group>"; };
 		35BDFB0D1CC236C000FC0C87 /* GameStatMgr.xm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GameStatMgr.xm; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		35BDFB0E1CC2371A00FC0C87 /* GameStatMgr.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GameStatMgr.mm; sourceTree = "<group>"; };
+		35BDFB101CC4D1CB00FC0C87 /* DeviceInfo.xm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = DeviceInfo.xm; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		35BDFB111CC4D23C00FC0C87 /* DeviceInfo.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = DeviceInfo.mm; sourceTree = "<group>"; };
+		35BDFB131CC4E09B00FC0C87 /* Q2DMapStatistics.xm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Q2DMapStatistics.xm; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		35BDFB141CC4E0D100FC0C87 /* Q2DMapStatistics.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Q2DMapStatistics.mm; sourceTree = "<group>"; };
+		35BDFB161CC4E3F600FC0C87 /* WCAppInfo.xm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = WCAppInfo.xm; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		35BDFB191CC4E44100FC0C87 /* WCAppInfo.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = WCAppInfo.mm; sourceTree = "<group>"; };
+		35BDFB1B1CC4E4BE00FC0C87 /* WCDeviceuserSportDevice.xm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = WCDeviceuserSportDevice.xm; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		35BDFB1C1CC4E4F400FC0C87 /* WCDeviceuserSportDevice.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = WCDeviceuserSportDevice.mm; sourceTree = "<group>"; };
 		35C924A71CC0DE75006CE955 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		35C924A91CC0ED53006CE955 /* MMService.xm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MMService.xm; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		35C924AA1CC0EDCA006CE955 /* CMessageDB.xm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CMessageDB.xm; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
@@ -99,6 +111,14 @@
 		35B4E2A01CBF801800029275 /* wxtweak */ = {
 			isa = PBXGroup;
 			children = (
+				35BDFB1C1CC4E4F400FC0C87 /* WCDeviceuserSportDevice.mm */,
+				35BDFB1B1CC4E4BE00FC0C87 /* WCDeviceuserSportDevice.xm */,
+				35BDFB191CC4E44100FC0C87 /* WCAppInfo.mm */,
+				35BDFB161CC4E3F600FC0C87 /* WCAppInfo.xm */,
+				35BDFB141CC4E0D100FC0C87 /* Q2DMapStatistics.mm */,
+				35BDFB131CC4E09B00FC0C87 /* Q2DMapStatistics.xm */,
+				35BDFB111CC4D23C00FC0C87 /* DeviceInfo.mm */,
+				35BDFB101CC4D1CB00FC0C87 /* DeviceInfo.xm */,
 				35BDFB0E1CC2371A00FC0C87 /* GameStatMgr.mm */,
 				35BDFB0D1CC236C000FC0C87 /* GameStatMgr.xm */,
 				35BDFB0B1CC231DD00FC0C87 /* AppDataMgr.mm */,
@@ -268,6 +288,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35BDFB1A1CC4E44100FC0C87 /* WCAppInfo.mm in Sources */,
 				35BDFAFD1CC2071D00FC0C87 /* CMessageMgr.mm in Sources */,
 				35BDFAFB1CC2071700FC0C87 /* CMessageDB.mm in Sources */,
 				35BDFB0C1CC231DD00FC0C87 /* AppDataMgr.mm in Sources */,
@@ -276,8 +297,11 @@
 				35BDFB001CC207DB00FC0C87 /* MMDumpReportMgr.mm in Sources */,
 				35BDFB031CC2138200FC0C87 /* ClickStreamMgr.mm in Sources */,
 				35B4E2AA1CBF801800029275 /* wxtweak.mm in Sources */,
+				35BDFB121CC4D23C00FC0C87 /* DeviceInfo.mm in Sources */,
 				35C956D51CC0F9F5006CE955 /* iConsole.mm in Sources */,
+				35BDFB1D1CC4E4F400FC0C87 /* WCDeviceuserSportDevice.mm in Sources */,
 				35BDFB091CC22F4D00FC0C87 /* MMMonitorMgr.mm in Sources */,
+				35BDFB151CC4E0D100FC0C87 /* Q2DMapStatistics.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

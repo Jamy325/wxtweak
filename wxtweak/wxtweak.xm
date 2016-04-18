@@ -624,6 +624,7 @@ void UncaughtExceptionHandler(NSException* exception)
 {
     %log;
     NSString* old = %orig;
+    LOGSTACK();
     NSLog(@"bundle id :%@, change to com.tencent.xin", old);
     return old;
 }

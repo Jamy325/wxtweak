@@ -10,8 +10,15 @@
 #undef HBLogDebug
 #define LOGSTACK() NSLog(@"%@",[NSThread callStackSymbols]);
 
+//NSString* t = [NSString stringWithFormat:__VA_ARGS__];
+// NSString* f = [NSString stringWithFormat:@"%@:%@", l, t];
+// NSLog(@"%@",f);
+
 #ifdef DEBUG
-#define HBLogDebug(...) do { NSLog(@"function:%s", __FUNCTION__);NSLog(__VA_ARGS__); }while(0)
+#define HBLogDebug(...) do{ \
+    NSLog(@"%s-%@", __FUNCTION__, [NSString stringWithFormat:__VA_ARGS__]); \
+}while(0)
+
 #else
 #define HBLogDebug(...) 
 #endif
