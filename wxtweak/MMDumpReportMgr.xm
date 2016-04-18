@@ -6,13 +6,35 @@
 
 - (_Bool)addOneTaskData:(id)arg1 { %log; _Bool r = %orig; HBLogDebug(@" = %d", r); return r; }
 
-- (void)uploadDumpOnIPXX:(id)arg1 { %log; %orig; }
+- (void)uploadDumpOnIPXX:(id)arg1
+{
+    %log;
 
-- (void)uploadDumpWithDate:(id)arg1 withReprotCntOneTime:(unsigned long long)arg2 { %log; %orig; }
+    NSLog(@"uploadDumpOnIPXX:arg1 cancle");
+//    %orig;
+}
 
-- (void)uploadDumpWithDate:(id)arg1 { %log; %orig; }
+- (void)uploadDumpWithDate:(id)arg1 withReprotCntOneTime:(unsigned long long)arg2
+{
+    %log;
+//    %orig;
+    
+          NSLog(@"uploadDumpWithDate:withReprotCntOneTime cancle");
+}
 
-- (void)uploadAllDump { %log; %orig; }
+- (void)uploadDumpWithDate:(id)arg1
+{
+    %log;
+//    %orig;
+        NSLog(@"uploadDumpWithDate cancle");
+}
+
+- (void)uploadAllDump
+{
+    %log;
+    //%orig;
+    NSLog(@"uploadAllDump cancle");
+}
 
 - (void)autoUploadDump 
 {

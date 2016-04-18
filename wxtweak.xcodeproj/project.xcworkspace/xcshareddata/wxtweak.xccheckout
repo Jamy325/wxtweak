@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>DEE1335C-B942-4318-AC87-6BBA08900D82</string>
+	<key>IDESourceControlProjectName</key>
+	<string>wxtweak</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>597CAFA0-A399-4B66-9F92-8ACC699A14CF</key>
+		<string>https://github.com/suzhijie325/wxtweak.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>wxtweak.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>597CAFA0-A399-4B66-9F92-8ACC699A14CF</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/suzhijie325/wxtweak.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>597CAFA0-A399-4B66-9F92-8ACC699A14CF</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>597CAFA0-A399-4B66-9F92-8ACC699A14CF</string>
+			<key>IDESourceControlWCCName</key>
+			<string>wxtweak</string>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -8,7 +8,7 @@
 
 
 #undef HBLogDebug
-#define LOGSTACK() NSLog(@"%@",[NSThread callStackSymbols]);
+#define LOGSTACK() NSLog(@"stack:%@",[NSThread callStackSymbols])
 
 #ifdef DEBUG
 #define HBLogDebug(...) do { NSLog(@"function:%s", __FUNCTION__);NSLog(__VA_ARGS__); }while(0)
