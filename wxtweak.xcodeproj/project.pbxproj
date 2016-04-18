@@ -20,6 +20,11 @@
 		353BF1AF1CC26B0E00697912 /* MMMonitorConfigMgr.mm in Sources */ = {isa = PBXBuildFile; fileRef = 353BF1AE1CC26B0E00697912 /* MMMonitorConfigMgr.mm */; };
 		3568D54D1CC53CC400F2C093 /* WCAdvertiseLogMgr.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3568D54C1CC53CC400F2C093 /* WCAdvertiseLogMgr.mm */; };
 		3568D54F1CC53CD200F2C093 /* CMainControll.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3568D54E1CC53CD200F2C093 /* CMainControll.mm */; };
+		3568D5621CC5430E00F2C093 /* DeviceInfo.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3568D5501CC5430D00F2C093 /* DeviceInfo.mm */; };
+		3568D5631CC5430E00F2C093 /* MMService.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3568D5521CC5430D00F2C093 /* MMService.mm */; };
+		3568D5651CC5430E00F2C093 /* Q2DMapStatistics.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3568D55C1CC5430E00F2C093 /* Q2DMapStatistics.mm */; };
+		3568D5661CC5430E00F2C093 /* WCAppInfo.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3568D55E1CC5430E00F2C093 /* WCAppInfo.mm */; };
+		3568D5671CC5430E00F2C093 /* WCDeviceuserSportDevice.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3568D5601CC5430E00F2C093 /* WCDeviceuserSportDevice.mm */; };
 		35B4E29F1CBF801800029275 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35B4E29E1CBF801800029275 /* Foundation.framework */; };
 		35B4E2AA1CBF801800029275 /* wxtweak.mm in Sources */ = {isa = PBXBuildFile; fileRef = 35B4E2A91CBF801800029275 /* wxtweak.mm */; };
 		35B4E2B51CBF83A300029275 /* libsubstrate.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 35B4E2B41CBF83A300029275 /* libsubstrate.dylib */; };
@@ -53,9 +58,18 @@
 		3568D54B1CC53B1A00F2C093 /* CMainControll.xm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CMainControll.xm; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		3568D54C1CC53CC400F2C093 /* WCAdvertiseLogMgr.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = WCAdvertiseLogMgr.mm; sourceTree = "<group>"; };
 		3568D54E1CC53CD200F2C093 /* CMainControll.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CMainControll.mm; sourceTree = "<group>"; };
+		3568D5501CC5430D00F2C093 /* DeviceInfo.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = DeviceInfo.mm; sourceTree = "<group>"; };
+		3568D5511CC5430D00F2C093 /* DeviceInfo.xm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = DeviceInfo.xm; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		3568D5521CC5430D00F2C093 /* MMService.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MMService.mm; sourceTree = "<group>"; };
+		3568D5531CC5430E00F2C093 /* MMService.xm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MMService.xm; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		3568D55C1CC5430E00F2C093 /* Q2DMapStatistics.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Q2DMapStatistics.mm; sourceTree = "<group>"; };
+		3568D55D1CC5430E00F2C093 /* Q2DMapStatistics.xm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Q2DMapStatistics.xm; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		3568D55E1CC5430E00F2C093 /* WCAppInfo.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = WCAppInfo.mm; sourceTree = "<group>"; };
+		3568D55F1CC5430E00F2C093 /* WCAppInfo.xm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = WCAppInfo.xm; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		3568D5601CC5430E00F2C093 /* WCDeviceuserSportDevice.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = WCDeviceuserSportDevice.mm; sourceTree = "<group>"; };
+		3568D5611CC5430E00F2C093 /* WCDeviceuserSportDevice.xm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = WCDeviceuserSportDevice.xm; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		35B4E29B1CBF801800029275 /* wxtweak.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = wxtweak.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		35B4E29E1CBF801800029275 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		35B4E2A31CBF801800029275 /* control.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = control.txt; path = Package/DEBIAN/control.txt; sourceTree = "<group>"; };
 		35B4E2A41CBF801800029275 /* control */ = {isa = PBXFileReference; lastKnownFileType = text; name = control; path = Package/DEBIAN/control; sourceTree = "<group>"; };
 		35B4E2A61CBF801800029275 /* PackageVersion.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = PackageVersion.plist; sourceTree = "<group>"; };
 		35B4E2A71CBF801800029275 /* wxtweak-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "wxtweak-Prefix.pch"; sourceTree = "<group>"; };
@@ -110,6 +124,16 @@
 		35B4E2A01CBF801800029275 /* wxtweak */ = {
 			isa = PBXGroup;
 			children = (
+				3568D5501CC5430D00F2C093 /* DeviceInfo.mm */,
+				3568D5511CC5430D00F2C093 /* DeviceInfo.xm */,
+				3568D5521CC5430D00F2C093 /* MMService.mm */,
+				3568D5531CC5430E00F2C093 /* MMService.xm */,
+				3568D55C1CC5430E00F2C093 /* Q2DMapStatistics.mm */,
+				3568D55D1CC5430E00F2C093 /* Q2DMapStatistics.xm */,
+				3568D55E1CC5430E00F2C093 /* WCAppInfo.mm */,
+				3568D55F1CC5430E00F2C093 /* WCAppInfo.xm */,
+				3568D5601CC5430E00F2C093 /* WCDeviceuserSportDevice.mm */,
+				3568D5611CC5430E00F2C093 /* WCDeviceuserSportDevice.xm */,
 				3568D54E1CC53CD200F2C093 /* CMainControll.mm */,
 				3568D54C1CC53CC400F2C093 /* WCAdvertiseLogMgr.mm */,
 				3568D54B1CC53B1A00F2C093 /* CMainControll.xm */,
@@ -156,7 +180,6 @@
 		35B4E2A21CBF801800029275 /* DEBIAN */ = {
 			isa = PBXGroup;
 			children = (
-				35B4E2A31CBF801800029275 /* control.txt */,
 				35B4E2A41CBF801800029275 /* control */,
 			);
 			name = DEBIAN;
@@ -288,6 +311,7 @@
 			files = (
 				353BF1A41CC2572D00697912 /* CMessageMgr.mm in Sources */,
 				353BF1AC1CC2697700697912 /* MMCrashReportConnection.mm in Sources */,
+				3568D5651CC5430E00F2C093 /* Q2DMapStatistics.mm in Sources */,
 				353BF1A81CC2572D00697912 /* MMDumpReportMgr.mm in Sources */,
 				353BF1AF1CC26B0E00697912 /* MMMonitorConfigMgr.mm in Sources */,
 				3568D54D1CC53CC400F2C093 /* WCAdvertiseLogMgr.mm in Sources */,
@@ -296,10 +320,14 @@
 				353BF1A11CC2572D00697912 /* AppDataMgr.mm in Sources */,
 				353BF1A61CC2572D00697912 /* GameStatMgr.mm in Sources */,
 				35B4E2AA1CBF801800029275 /* wxtweak.mm in Sources */,
+				3568D5671CC5430E00F2C093 /* WCDeviceuserSportDevice.mm in Sources */,
 				353BF1A91CC2572D00697912 /* MMMonitorMgr.mm in Sources */,
 				3568D54F1CC53CD200F2C093 /* CMainControll.mm in Sources */,
 				353BF1A31CC2572D00697912 /* CMessageDB.mm in Sources */,
 				353BF1A71CC2572D00697912 /* iConsole.mm in Sources */,
+				3568D5621CC5430E00F2C093 /* DeviceInfo.mm in Sources */,
+				3568D5631CC5430E00F2C093 /* MMService.mm in Sources */,
+				3568D5661CC5430E00F2C093 /* WCAppInfo.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -398,6 +426,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					/opt/iOSOpenDev/lib,
+					"$(PROJECT_DIR)/wxtweak/Package/Library/MobileSubstrate/DynamicLibraries",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				iOSOpenDevBuildPackageOnAnyBuild = NO;
@@ -428,6 +457,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					/opt/iOSOpenDev/lib,
+					"$(PROJECT_DIR)/wxtweak/Package/Library/MobileSubstrate/DynamicLibraries",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				iOSOpenDevBuildPackageOnAnyBuild = NO;
