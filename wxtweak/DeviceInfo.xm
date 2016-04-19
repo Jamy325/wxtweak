@@ -1,12 +1,21 @@
+
+#import "wxUtil.h"
+
 %hook DeviceInfo
 + (id)deviceXml
  {
         %log; 
-        id r = %orig; 
-        HBLogDebug(@" = %@", r); 
+        NSString* r = %orig;
+        HBLogDebug(@" = %@", r);
+        NSString* md5 = md5HexDigest(r);
+        md5 = md5HexDigest(md5);
+        NSLog(@"md5:", md5);
 
-        return @"<softtype><k3>7.1.2</k3><k9>iPhone</k9><k10>2</k10><k19>3AC5421B-A9EE-434D-A7D5-EC41F70CD133</k19><k20>F9306C17-207B-498B-B394-6B98BA69069A</k20><k21>jetfire</k21><k22>中国移动</k22><k24>52:bd:5f:53:a6:3c</k24><k33>微信</k33><k47>1</k47><k50>0</k50><k51>com.tencent.xin</k51></softtype>";
+        NSString* f = @"<softtype><k3>7.1.2</k3><k9>iPhone</k9><k10>2</k10><k19>3AC5421B-A9EE-434D-A7D5-EC41F70CD133</k19><k20>F9306C17-207B-498B-B394-6B98BA69069A</k20><k21>jetfire</k21><k22>中国移动</k22><k24>52:bd:5f:53:a6:3c</k24><k33>微信</k33><k47>1</k47><k50>0</k50><k51>com.tencent.xin</k51></softtype>";
+        
+        return f;
 }
+
 
 
 + (_Bool)hasForceTouchCapability:(id)arg1 { %log; _Bool r = %orig; HBLogDebug(@" = %d", r); return r; }

@@ -59,6 +59,7 @@
 		35BDFB191CC4E44100FC0C87 /* WCAppInfo.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = WCAppInfo.mm; sourceTree = "<group>"; };
 		35BDFB1B1CC4E4BE00FC0C87 /* WCDeviceuserSportDevice.xm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = WCDeviceuserSportDevice.xm; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		35BDFB1C1CC4E4F400FC0C87 /* WCDeviceuserSportDevice.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = WCDeviceuserSportDevice.mm; sourceTree = "<group>"; };
+		35BDFB1E1CC622C400FC0C87 /* wxUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = wxUtil.h; sourceTree = "<group>"; };
 		35C924A71CC0DE75006CE955 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		35C924AA1CC0EDCA006CE955 /* CMessageDB.xm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CMessageDB.xm; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		35C924AB1CC0EDCA006CE955 /* CMessageMgr.xm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CMessageMgr.xm; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
@@ -140,6 +141,7 @@
 				35B4E2A91CBF801800029275 /* wxtweak.mm */,
 				35B4E2A11CBF801800029275 /* Package */,
 				35B4E2A51CBF801800029275 /* Supporting Files */,
+				35BDFB1E1CC622C400FC0C87 /* wxUtil.h */,
 			);
 			path = wxtweak;
 			sourceTree = "<group>";
