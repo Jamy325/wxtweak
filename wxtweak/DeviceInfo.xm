@@ -9,11 +9,37 @@
         HBLogDebug(@" = %@", r);
         NSString* md5 = md5HexDigest(r);
         md5 = md5HexDigest(md5);
-        NSLog(@"md5:", md5);
-
-        NSString* f = @"<softtype><k3>7.1.2</k3><k9>iPhone</k9><k10>2</k10><k19>3AC5421B-A9EE-434D-A7D5-EC41F70CD133</k19><k20>F9306C17-207B-498B-B394-6B98BA69069A</k20><k21>jetfire</k21><k22>中国移动</k22><k24>52:bd:5f:53:a6:3c</k24><k33>微信</k33><k47>1</k47><k50>0</k50><k51>com.tencent.xin</k51></softtype>";
-        
-        return f;
+        NSLog(@"md5:%@", md5);
+     
+     const char * a =[md5 UTF8String];
+     
+     NSString* identifierForVendorUUID_k19 =
+     [NSString stringWithFormat:@"%c%c%c%c%c%c%c%c-%c%c%c%c-%c%c%c%c-%c%c%c%c-%c%c%c%c%c%c%c%c%c%c%c%c",
+      a[1], a[3], a[24],a[25], a[30], a[11],a[8], a[1], a[24],a[10], a[12], a[22],a[10], a[14], a[3], a[4],
+      a[11], a[31], a[4],a[5], a[0], a[1],a[8], a[1], a[14],a[10], a[22], a[22],a[20], a[4], a[13], a[24] ];
+     
+     NSString* aduuidString_k20 =
+     [NSString stringWithFormat:@"%c%c%c%c%c%c%c%c-%c%c%c%c-%c%c%c%c-%c%c%c%c-%c%c%c%c%c%c%c%c%c%c%c%c",
+      a[2], a[4], a[6],a[8], a[10], a[12],a[14], a[16], a[18],a[20], a[22], a[24],a[26], a[28], a[30], a[31],
+      a[0], a[1], a[3],a[5], a[7], a[9],a[11], a[13], a[15],a[17], a[19], a[21],a[23], a[25], a[27], a[29] ];
+     
+     NSString* wifiname_k21 =
+     [NSString stringWithFormat:@"TPLINK-%c%c%c%c%c%c%c%c",
+      a[2], a[4], a[6],a[8], a[10], a[12],a[14], a[16]];
+     
+     
+     NSString* carrierName_k22 = @"移动";
+     NSString* macaddress_k24 = @"02:00:00:00:00:00";
+     NSString* bundleDisplayName_k33 = @"微信";
+     int NetType_k47 = 1;
+     int isJailBreak_k50 = 0;
+     NSString* bundleIdentifier_k51 = @"com.tencent.xin";
+     
+     
+     NSString* format = @"<softtype><k3>%@</k3><k9>%@</k9><k10>%d</k10><k19>%@</k19><k20>%@</k20><k21>%@</k21><k22>%@</k22><k24>%@</k24><k33>%@</k33><k47>%u</k47><k50>%d</k50><k51>%@</k51></softtype>";
+     NSString* str =  [NSString stringWithFormat:format, @"9.3.1", @"iphone", 1,  identifierForVendorUUID_k19, aduuidString_k20,wifiname_k21, carrierName_k22, macaddress_k24, bundleDisplayName_k33, NetType_k47, isJailBreak_k50, bundleIdentifier_k51];
+     NSLog(@"change to :%@", str);
+        return str;
 }
 
 
