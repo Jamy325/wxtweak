@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-<<<<<<< HEAD
-=======
 		353BF1A11CC2572D00697912 /* AppDataMgr.mm in Sources */ = {isa = PBXBuildFile; fileRef = 353BF18F1CC2572D00697912 /* AppDataMgr.mm */; };
 		353BF1A21CC2572D00697912 /* ClickStreamMgr.mm in Sources */ = {isa = PBXBuildFile; fileRef = 353BF1911CC2572D00697912 /* ClickStreamMgr.mm */; };
 		353BF1A31CC2572D00697912 /* CMessageDB.mm in Sources */ = {isa = PBXBuildFile; fileRef = 353BF1931CC2572D00697912 /* CMessageDB.mm */; };
@@ -27,7 +25,6 @@
 		3568D5651CC5430E00F2C093 /* Q2DMapStatistics.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3568D55C1CC5430E00F2C093 /* Q2DMapStatistics.mm */; };
 		3568D5661CC5430E00F2C093 /* WCAppInfo.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3568D55E1CC5430E00F2C093 /* WCAppInfo.mm */; };
 		3568D5671CC5430E00F2C093 /* WCDeviceuserSportDevice.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3568D5601CC5430E00F2C093 /* WCDeviceuserSportDevice.mm */; };
->>>>>>> 3518ffd7c64b35f0da0615bbe53f084a841748e7
 		35B4E29F1CBF801800029275 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35B4E29E1CBF801800029275 /* Foundation.framework */; };
 		35B4E2AA1CBF801800029275 /* wxtweak.mm in Sources */ = {isa = PBXBuildFile; fileRef = 35B4E2A91CBF801800029275 /* wxtweak.mm */; };
 		35B4E2B51CBF83A300029275 /* libsubstrate.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 35B4E2B41CBF83A300029275 /* libsubstrate.dylib */; };
@@ -35,8 +32,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-<<<<<<< HEAD
-=======
 		353BF18F1CC2572D00697912 /* AppDataMgr.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDataMgr.mm; sourceTree = "<group>"; };
 		353BF1901CC2572D00697912 /* AppDataMgr.xm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDataMgr.xm; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		353BF1911CC2572D00697912 /* ClickStreamMgr.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ClickStreamMgr.mm; sourceTree = "<group>"; };
@@ -73,7 +68,6 @@
 		3568D55F1CC5430E00F2C093 /* WCAppInfo.xm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = WCAppInfo.xm; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		3568D5601CC5430E00F2C093 /* WCDeviceuserSportDevice.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = WCDeviceuserSportDevice.mm; sourceTree = "<group>"; };
 		3568D5611CC5430E00F2C093 /* WCDeviceuserSportDevice.xm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = WCDeviceuserSportDevice.xm; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
->>>>>>> 3518ffd7c64b35f0da0615bbe53f084a841748e7
 		35B4E29B1CBF801800029275 /* wxtweak.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = wxtweak.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		35B4E29E1CBF801800029275 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		35B4E2A41CBF801800029275 /* control */ = {isa = PBXFileReference; lastKnownFileType = text; name = control; path = Package/DEBIAN/control; sourceTree = "<group>"; };
@@ -83,7 +77,6 @@
 		35B4E2A91CBF801800029275 /* wxtweak.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = wxtweak.mm; sourceTree = "<group>"; };
 		35B4E2AE1CBF801800029275 /* wxtweak.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = wxtweak.plist; path = Package/Library/MobileSubstrate/DynamicLibraries/wxtweak.plist; sourceTree = "<group>"; };
 		35B4E2B41CBF83A300029275 /* libsubstrate.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsubstrate.dylib; path = ../../../../opt/iOSOpenDev/lib/libsubstrate.dylib; sourceTree = "<group>"; };
-<<<<<<< HEAD
 		35BDFAFA1CC2071700FC0C87 /* CMessageDB.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CMessageDB.mm; sourceTree = "<group>"; };
 		35BDFAFC1CC2071D00FC0C87 /* CMessageMgr.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CMessageMgr.mm; sourceTree = "<group>"; };
 		35BDFAFE1CC2072D00FC0C87 /* MMDumpReportMgr.xm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MMDumpReportMgr.xm; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
@@ -107,8 +100,6 @@
 		35BDFB1B1CC4E4BE00FC0C87 /* WCDeviceuserSportDevice.xm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = WCDeviceuserSportDevice.xm; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		35BDFB1C1CC4E4F400FC0C87 /* WCDeviceuserSportDevice.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = WCDeviceuserSportDevice.mm; sourceTree = "<group>"; };
 		35BDFB1E1CC622C400FC0C87 /* wxUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = wxUtil.h; sourceTree = "<group>"; };
-=======
->>>>>>> 3518ffd7c64b35f0da0615bbe53f084a841748e7
 		35C924A71CC0DE75006CE955 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -353,13 +344,11 @@
 				353BF1A11CC2572D00697912 /* AppDataMgr.mm in Sources */,
 				353BF1A61CC2572D00697912 /* GameStatMgr.mm in Sources */,
 				35B4E2AA1CBF801800029275 /* wxtweak.mm in Sources */,
-<<<<<<< HEAD
 				35BDFB121CC4D23C00FC0C87 /* DeviceInfo.mm in Sources */,
 				35C956D51CC0F9F5006CE955 /* iConsole.mm in Sources */,
 				35BDFB1D1CC4E4F400FC0C87 /* WCDeviceuserSportDevice.mm in Sources */,
 				35BDFB091CC22F4D00FC0C87 /* MMMonitorMgr.mm in Sources */,
 				35BDFB151CC4E0D100FC0C87 /* Q2DMapStatistics.mm in Sources */,
-=======
 				3568D5671CC5430E00F2C093 /* WCDeviceuserSportDevice.mm in Sources */,
 				353BF1A91CC2572D00697912 /* MMMonitorMgr.mm in Sources */,
 				3568D54F1CC53CD200F2C093 /* CMainControll.mm in Sources */,
@@ -368,7 +357,6 @@
 				3568D5621CC5430E00F2C093 /* DeviceInfo.mm in Sources */,
 				3568D5631CC5430E00F2C093 /* MMService.mm in Sources */,
 				3568D5661CC5430E00F2C093 /* WCAppInfo.mm in Sources */,
->>>>>>> 3518ffd7c64b35f0da0615bbe53f084a841748e7
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
