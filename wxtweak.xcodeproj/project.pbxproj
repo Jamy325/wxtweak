@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		351088061CC127BB00176DDE /* CMessageDB.mm in Sources */ = {isa = PBXBuildFile; fileRef = 351088041CC127BB00176DDE /* CMessageDB.mm */; };
-		351088071CC127BB00176DDE /* CMessageMgr.mm in Sources */ = {isa = PBXBuildFile; fileRef = 351088051CC127BB00176DDE /* CMessageMgr.mm */; };
-		3510880A1CC14D0A00176DDE /* ClickStreamMgr.mm in Sources */ = {isa = PBXBuildFile; fileRef = 351088091CC14D0A00176DDE /* ClickStreamMgr.mm */; };
 		35B4E29F1CBF801800029275 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35B4E29E1CBF801800029275 /* Foundation.framework */; };
 		35B4E2AA1CBF801800029275 /* wxtweak.mm in Sources */ = {isa = PBXBuildFile; fileRef = 35B4E2A91CBF801800029275 /* wxtweak.mm */; };
 		35B4E2B51CBF83A300029275 /* libsubstrate.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 35B4E2B41CBF83A300029275 /* libsubstrate.dylib */; };
@@ -30,10 +27,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		351088041CC127BB00176DDE /* CMessageDB.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CMessageDB.mm; sourceTree = "<group>"; };
-		351088051CC127BB00176DDE /* CMessageMgr.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CMessageMgr.mm; sourceTree = "<group>"; };
-		351088081CC14BE500176DDE /* ClickStreamMgr.xm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ClickStreamMgr.xm; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		351088091CC14D0A00176DDE /* ClickStreamMgr.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ClickStreamMgr.mm; sourceTree = "<group>"; };
 		35B4E29B1CBF801800029275 /* wxtweak.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = wxtweak.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		35B4E29E1CBF801800029275 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		35B4E2A31CBF801800029275 /* control.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = control.txt; path = Package/DEBIAN/control.txt; sourceTree = "<group>"; };
@@ -303,7 +296,6 @@
 				35BDFB031CC2138200FC0C87 /* ClickStreamMgr.mm in Sources */,
 				35B4E2AA1CBF801800029275 /* wxtweak.mm in Sources */,
 				35BDFB121CC4D23C00FC0C87 /* DeviceInfo.mm in Sources */,
-				3510880A1CC14D0A00176DDE /* ClickStreamMgr.mm in Sources */,
 				35C956D51CC0F9F5006CE955 /* iConsole.mm in Sources */,
 				35BDFB1D1CC4E4F400FC0C87 /* WCDeviceuserSportDevice.mm in Sources */,
 				35BDFB091CC22F4D00FC0C87 /* MMMonitorMgr.mm in Sources */,
