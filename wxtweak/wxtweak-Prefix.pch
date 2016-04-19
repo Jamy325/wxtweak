@@ -8,7 +8,7 @@
 
 
 #undef HBLogDebug
-#define LOGSTACK() NSLog(@"%@",[NSThread callStackSymbols]);
+#define LOGSTACK() NSLog(@"stack:%@",[NSThread callStackSymbols])
 
 //NSString* t = [NSString stringWithFormat:__VA_ARGS__];
 // NSString* f = [NSString stringWithFormat:@"%@:%@", l, t];

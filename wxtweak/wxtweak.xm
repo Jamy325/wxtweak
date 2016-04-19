@@ -623,9 +623,19 @@ void UncaughtExceptionHandler(NSException* exception)
 - (NSString *)bundleIdentifier
 {
     %log;
-    NSString* old = %orig;
     LOGSTACK();
-    NSLog(@"bundle id :%@, change to com.tencent.xin", old);
+    NSArray* symbos = [NSThread callStackSymbols];
+    
+    NSRange range = [[symbos objectAtIndex:1] rangeOfString:@"1   WeChat"];
+    
+    NSString* old = %orig;
+    
+    if (range.location != NSNotFound){
+        NSLog(@"orgin:%@,change to:com.tencent.xin", old);
+        return @"com.tencent.xin";
+    }
+    
+     NSLog(@"bundle id :%@", old);
     return old;
 }
 %end
