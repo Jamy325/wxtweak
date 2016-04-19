@@ -1,6 +1,6 @@
 #line 1 "/Users/jamy/works/wxtweak/wxtweak/DeviceInfo.xm"
 
-#import "wxUtil.h"
+#include "wxUtil.h"
 
 #if defined(__clang__)
 #if __has_feature(objc_arc)

@@ -77,28 +77,6 @@
 		35B4E2A91CBF801800029275 /* wxtweak.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = wxtweak.mm; sourceTree = "<group>"; };
 		35B4E2AE1CBF801800029275 /* wxtweak.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = wxtweak.plist; path = Package/Library/MobileSubstrate/DynamicLibraries/wxtweak.plist; sourceTree = "<group>"; };
 		35B4E2B41CBF83A300029275 /* libsubstrate.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsubstrate.dylib; path = ../../../../opt/iOSOpenDev/lib/libsubstrate.dylib; sourceTree = "<group>"; };
-		35BDFAFA1CC2071700FC0C87 /* CMessageDB.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CMessageDB.mm; sourceTree = "<group>"; };
-		35BDFAFC1CC2071D00FC0C87 /* CMessageMgr.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CMessageMgr.mm; sourceTree = "<group>"; };
-		35BDFAFE1CC2072D00FC0C87 /* MMDumpReportMgr.xm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MMDumpReportMgr.xm; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		35BDFAFF1CC207DB00FC0C87 /* MMDumpReportMgr.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MMDumpReportMgr.mm; sourceTree = "<group>"; };
-		35BDFB011CC2129600FC0C87 /* ClickStreamMgr.xm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ClickStreamMgr.xm; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		35BDFB021CC2138200FC0C87 /* ClickStreamMgr.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ClickStreamMgr.mm; sourceTree = "<group>"; };
-		35BDFB041CC21AF700FC0C87 /* CUtility.xm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CUtility.xm; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		35BDFB051CC21B4300FC0C87 /* CUtility.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CUtility.mm; sourceTree = "<group>"; };
-		35BDFB071CC22E8B00FC0C87 /* MMMonitorMgr.xm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MMMonitorMgr.xm; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		35BDFB081CC22F4D00FC0C87 /* MMMonitorMgr.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MMMonitorMgr.mm; sourceTree = "<group>"; };
-		35BDFB0A1CC2318100FC0C87 /* AppDataMgr.xm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDataMgr.xm; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		35BDFB0B1CC231DD00FC0C87 /* AppDataMgr.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDataMgr.mm; sourceTree = "<group>"; };
-		35BDFB0D1CC236C000FC0C87 /* GameStatMgr.xm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GameStatMgr.xm; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		35BDFB0E1CC2371A00FC0C87 /* GameStatMgr.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GameStatMgr.mm; sourceTree = "<group>"; };
-		35BDFB101CC4D1CB00FC0C87 /* DeviceInfo.xm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = DeviceInfo.xm; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		35BDFB111CC4D23C00FC0C87 /* DeviceInfo.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = DeviceInfo.mm; sourceTree = "<group>"; };
-		35BDFB131CC4E09B00FC0C87 /* Q2DMapStatistics.xm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Q2DMapStatistics.xm; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		35BDFB141CC4E0D100FC0C87 /* Q2DMapStatistics.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Q2DMapStatistics.mm; sourceTree = "<group>"; };
-		35BDFB161CC4E3F600FC0C87 /* WCAppInfo.xm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = WCAppInfo.xm; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		35BDFB191CC4E44100FC0C87 /* WCAppInfo.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = WCAppInfo.mm; sourceTree = "<group>"; };
-		35BDFB1B1CC4E4BE00FC0C87 /* WCDeviceuserSportDevice.xm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = WCDeviceuserSportDevice.xm; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		35BDFB1C1CC4E4F400FC0C87 /* WCDeviceuserSportDevice.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = WCDeviceuserSportDevice.mm; sourceTree = "<group>"; };
 		35BDFB1E1CC622C400FC0C87 /* wxUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = wxUtil.h; sourceTree = "<group>"; };
 		35C924A71CC0DE75006CE955 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -344,11 +322,6 @@
 				353BF1A11CC2572D00697912 /* AppDataMgr.mm in Sources */,
 				353BF1A61CC2572D00697912 /* GameStatMgr.mm in Sources */,
 				35B4E2AA1CBF801800029275 /* wxtweak.mm in Sources */,
-				35BDFB121CC4D23C00FC0C87 /* DeviceInfo.mm in Sources */,
-				35C956D51CC0F9F5006CE955 /* iConsole.mm in Sources */,
-				35BDFB1D1CC4E4F400FC0C87 /* WCDeviceuserSportDevice.mm in Sources */,
-				35BDFB091CC22F4D00FC0C87 /* MMMonitorMgr.mm in Sources */,
-				35BDFB151CC4E0D100FC0C87 /* Q2DMapStatistics.mm in Sources */,
 				3568D5671CC5430E00F2C093 /* WCDeviceuserSportDevice.mm in Sources */,
 				353BF1A91CC2572D00697912 /* MMMonitorMgr.mm in Sources */,
 				3568D54F1CC53CD200F2C093 /* CMainControll.mm in Sources */,

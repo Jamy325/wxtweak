@@ -1,5 +1,5 @@
 
-#import "wxUtil.h"
+#include "wxUtil.h"
 
 %hook DeviceInfo
 + (id)deviceXml

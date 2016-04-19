@@ -7,45 +7,24 @@
 //	(1) go to TARGETS > Build Phases > Link Binary With Libraries and add /opt/iOSOpenDev/lib/libsubstrate.dylib \
 //	(2) remove these lines from *.xm files (not *.mm files as they're automatically generated from *.xm files)
 
-#import <UIKit/UIKit.h>
-void UncaughtExceptionHandler(NSException* exception);
+
+#include "wxUtil.h"
 
 
-void redirectNSLogToDocumentFolder()
+NSString* md5HexDigest(NSString* input)
 {
-    //如果已经连接Xcode调试则不输出到文件
-    if(isatty(STDOUT_FILENO)) {
-        return;
+    const char* str = [input UTF8String];
+    unsigned char result[CC_MD5_DIGEST_LENGTH];
+    CC_MD5(str, strlen(str), result);
+    
+    NSMutableString *ret = [NSMutableString stringWithCapacity:CC_MD5_DIGEST_LENGTH*2];//
+    
+    for(int i = 0; i < CC_MD5_DIGEST_LENGTH; i++) {
+        [ret appendFormat:@"%x", result[i]];
     }
-    
-    UIDevice *device = [UIDevice currentDevice];
-    if([[device model] hasSuffix:@"Simulator"]){ //在模拟器不保存到文件中
-        return;
-    }
-    
-    //将NSlog打印信息保存到Document目录下的Log文件夹下
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *logDirectory = [[paths objectAtIndex:0] stringByAppendingPathComponent:@"Log"];
-    
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-	BOOL fileExists = [fileManager fileExistsAtPath:logDirectory];
-    if (!fileExists) {
-		[fileManager createDirectoryAtPath:logDirectory  withIntermediateDirectories:YES attributes:nil error:nil];
-	}
-    
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"zh_CN"]];
-    [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"]; //每次启动后都保存一个新的日志文件中
-    NSString *dateStr = [formatter stringFromDate:[NSDate date]];
-    NSString *logFilePath = [logDirectory stringByAppendingFormat:@"/%@.log",dateStr];
-    
-    // 将log输入到文件
-    freopen([logFilePath cStringUsingEncoding:NSASCIIStringEncoding], "a+", stdout);
-    freopen([logFilePath cStringUsingEncoding:NSASCIIStringEncoding], "a+", stderr);
-    
-    //未捕获的Objective-C异常日志
-    NSSetUncaughtExceptionHandler (&UncaughtExceptionHandler);
+    return ret;
 }
+
 
 void UncaughtExceptionHandler(NSException* exception)
 {
@@ -60,9 +39,10 @@ void UncaughtExceptionHandler(NSException* exception)
     }
     
     //将crash日志保存到Document目录下的Log文件夹下
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *logDirectory = [[paths objectAtIndex:0] stringByAppendingPathComponent:@"Log"];
-    
+    //  NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    // NSString *logDirectory = [[paths objectAtIndex:0] stringByAppendingPathComponent:@"Log"];
+    NSString* bid = [[NSBundle mainBundle] bundleIdentifier];
+    NSString *logDirectory = [NSString stringWithFormat:@"/var/logs/%@", bid];
     NSFileManager *fileManager = [NSFileManager defaultManager];
     if (![fileManager fileExistsAtPath:logDirectory]) {
 		[fileManager createDirectoryAtPath:logDirectory  withIntermediateDirectories:YES attributes:nil error:nil];
@@ -90,6 +70,49 @@ void UncaughtExceptionHandler(NSException* exception)
     //    NSURL *url = [NSURL URLWithString:[urlStr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
     //    [[UIApplication sharedApplication] openURL:url];
 }
+
+
+void redirectNSLogToDocumentFolder()
+{
+    //如果已经连接Xcode调试则不输出到文件
+    if(isatty(STDOUT_FILENO)) {
+        return;
+    }
+    
+    UIDevice *device = [UIDevice currentDevice];
+    if([[device model] hasSuffix:@"Simulator"]){ //在模拟器不保存到文件中
+        return;
+    }
+    
+    //将NSlog打印信息保存到Document目录下的Log文件夹下
+    //  NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    // NSString *logDirectory = [[paths objectAtIndex:0] stringByAppendingPathComponent:@"Log"];
+    
+    NSString* bid = [[NSBundle mainBundle] bundleIdentifier];
+    NSString *logDirectory = [NSString stringWithFormat:@"/var/logs/%@", bid];
+    
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+	BOOL fileExists = [fileManager fileExistsAtPath:logDirectory];
+    if (!fileExists) {
+		[fileManager createDirectoryAtPath:logDirectory  withIntermediateDirectories:YES attributes:nil error:nil];
+	}
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"zh_CN"]];
+    [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"]; //每次启动后都保存一个新的日志文件中
+    NSString *dateStr = [formatter stringFromDate:[NSDate date]];
+    NSString *logFilePath = [logDirectory stringByAppendingFormat:@"/%@.log",dateStr];
+    
+    // 将log输入到文件
+    freopen([logFilePath cStringUsingEncoding:NSASCIIStringEncoding], "a+", stdout);
+    freopen([logFilePath cStringUsingEncoding:NSASCIIStringEncoding], "a+", stderr);
+    
+    //未捕获的Objective-C异常日志
+    NSSetUncaughtExceptionHandler (&UncaughtExceptionHandler);
+}
+
+
+
 
 
 
