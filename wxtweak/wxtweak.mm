@@ -40,10 +40,10 @@ void UncaughtExceptionHandler(NSException* exception)
     }
     
     
-    
-    
-    NSString* bid = [[NSBundle mainBundle] bundleIdentifier];
-    NSString *logDirectory = [NSString stringWithFormat:@"/var/logs/%@", bid];
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *logDirectory = [[paths objectAtIndex:0] stringByAppendingPathComponent:@"Log"];
+  
+  
     NSFileManager *fileManager = [NSFileManager defaultManager];
     if (![fileManager fileExistsAtPath:logDirectory]) {
 		[fileManager createDirectoryAtPath:logDirectory  withIntermediateDirectories:YES attributes:nil error:nil];
@@ -86,11 +86,11 @@ void redirectNSLogToDocumentFolder()
     }
     
     
+      NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+     NSString *logDirectory = [[paths objectAtIndex:0] stringByAppendingPathComponent:@"Log"];
     
     
-    
-    NSString* bid = [[NSBundle mainBundle] bundleIdentifier];
-    NSString *logDirectory = [NSString stringWithFormat:@"/var/logs/%@", bid];
+   
     
     NSFileManager *fileManager = [NSFileManager defaultManager];
 	BOOL fileExists = [fileManager fileExistsAtPath:logDirectory];

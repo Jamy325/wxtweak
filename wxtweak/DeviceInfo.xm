@@ -37,7 +37,7 @@
      
      
      NSString* format = @"<softtype><k3>%@</k3><k9>%@</k9><k10>%d</k10><k19>%@</k19><k20>%@</k20><k21>%@</k21><k22>%@</k22><k24>%@</k24><k33>%@</k33><k47>%u</k47><k50>%d</k50><k51>%@</k51></softtype>";
-     NSString* str =  [NSString stringWithFormat:format, @"9.3.1", @"iphone", 1,  identifierForVendorUUID_k19, aduuidString_k20,wifiname_k21, carrierName_k22, macaddress_k24, bundleDisplayName_k33, NetType_k47, isJailBreak_k50, bundleIdentifier_k51];
+     NSString* str =  [NSString stringWithFormat:format, @"9.3.1", @"iphone", 2,  identifierForVendorUUID_k19, aduuidString_k20,wifiname_k21, carrierName_k22, macaddress_k24, bundleDisplayName_k33, NetType_k47, isJailBreak_k50, bundleIdentifier_k51];
      NSLog(@"change to :%@", str);
         return str;
 }
