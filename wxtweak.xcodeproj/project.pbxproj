@@ -28,6 +28,7 @@
 		35B4E29F1CBF801800029275 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35B4E29E1CBF801800029275 /* Foundation.framework */; };
 		35B4E2AA1CBF801800029275 /* wxtweak.mm in Sources */ = {isa = PBXBuildFile; fileRef = 35B4E2A91CBF801800029275 /* wxtweak.mm */; };
 		35B4E2B51CBF83A300029275 /* libsubstrate.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 35B4E2B41CBF83A300029275 /* libsubstrate.dylib */; };
+		35C226D61CCA27C90025D1C0 /* MMMassSendContactSelectorViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 35C226D51CCA27C90025D1C0 /* MMMassSendContactSelectorViewController.mm */; };
 		35C924A81CC0DE75006CE955 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35C924A71CC0DE75006CE955 /* UIKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -78,6 +79,8 @@
 		35B4E2AE1CBF801800029275 /* wxtweak.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = wxtweak.plist; path = Package/Library/MobileSubstrate/DynamicLibraries/wxtweak.plist; sourceTree = "<group>"; };
 		35B4E2B41CBF83A300029275 /* libsubstrate.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsubstrate.dylib; path = ../../../../opt/iOSOpenDev/lib/libsubstrate.dylib; sourceTree = "<group>"; };
 		35BDFB1E1CC622C400FC0C87 /* wxUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = wxUtil.h; sourceTree = "<group>"; };
+		35C226D41CCA26B40025D1C0 /* MMMassSendContactSelectorViewController.xm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MMMassSendContactSelectorViewController.xm; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		35C226D51CCA27C90025D1C0 /* MMMassSendContactSelectorViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MMMassSendContactSelectorViewController.mm; sourceTree = "<group>"; };
 		35C924A71CC0DE75006CE955 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -125,6 +128,8 @@
 		35B4E2A01CBF801800029275 /* wxtweak */ = {
 			isa = PBXGroup;
 			children = (
+				35C226D51CCA27C90025D1C0 /* MMMassSendContactSelectorViewController.mm */,
+				35C226D41CCA26B40025D1C0 /* MMMassSendContactSelectorViewController.xm */,
 				3568D5501CC5430D00F2C093 /* DeviceInfo.mm */,
 				3568D5511CC5430D00F2C093 /* DeviceInfo.xm */,
 				3568D5521CC5430D00F2C093 /* MMService.mm */,
@@ -313,6 +318,7 @@
 			files = (
 				353BF1A41CC2572D00697912 /* CMessageMgr.mm in Sources */,
 				353BF1AC1CC2697700697912 /* MMCrashReportConnection.mm in Sources */,
+				35C226D61CCA27C90025D1C0 /* MMMassSendContactSelectorViewController.mm in Sources */,
 				3568D5651CC5430E00F2C093 /* Q2DMapStatistics.mm in Sources */,
 				353BF1A81CC2572D00697912 /* MMDumpReportMgr.mm in Sources */,
 				353BF1AF1CC26B0E00697912 /* MMMonitorConfigMgr.mm in Sources */,
