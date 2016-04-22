@@ -40,28 +40,7 @@
 - (void)onSelectAll:(id)sender
 {
     %log;
-
-    UIView* view = [[UIView alloc] initWithFrame:CGRectMake(40, 40, 100, 100)];
-    [view setBackgroundColor:[UIColor lightGrayColor]];
-    [view.layer setShadowOffset:CGSizeMake(10, 10)];
-    [view.layer setShadowColor:[[UIColor redColor] CGColor]];
-    [view.layer setCornerRadius:15];
-    
-    [[sender superview] addSubview:view];
-    UIButton *button1 = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    button1.frame = CGRectMake(10, 10, 80, 20);
-    
-    //button背景色
-    button1.backgroundColor = [UIColor whiteColor];
-    
-    //设置button填充图片
-    //[button1 setImage:[UIImage imageNamed:@"btng.png"] forState:UIControlStateNormal];
-    
-    //设置button标题
-    [button1 setTitle:@"点击xxxx" forState:UIControlStateNormal];
-    [button1.layer setCornerRadius:3];
-    [view addSubview:button1];
-
+    %orig;
 }
 
 %end

@@ -14,7 +14,7 @@
 // NSString* f = [NSString stringWithFormat:@"%@:%@", l, t];
 // NSLog(@"%@",f);
 
-#ifdef DEBUG
+#ifdef DEBUG12
 #define HBLogDebug(...) do{ \
     NSLog(@"%s-%@", __FUNCTION__, [NSString stringWithFormat:__VA_ARGS__]); \
 }while(0)

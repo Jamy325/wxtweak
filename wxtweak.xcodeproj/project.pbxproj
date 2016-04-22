@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		350A5D8A1CCA2F7600EBB56A /* MassSendContentLogicController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 350A5D891CCA2F7600EBB56A /* MassSendContentLogicController.mm */; };
 		353BF1A11CC2572D00697912 /* AppDataMgr.mm in Sources */ = {isa = PBXBuildFile; fileRef = 353BF18F1CC2572D00697912 /* AppDataMgr.mm */; };
 		353BF1A21CC2572D00697912 /* ClickStreamMgr.mm in Sources */ = {isa = PBXBuildFile; fileRef = 353BF1911CC2572D00697912 /* ClickStreamMgr.mm */; };
 		353BF1A31CC2572D00697912 /* CMessageDB.mm in Sources */ = {isa = PBXBuildFile; fileRef = 353BF1931CC2572D00697912 /* CMessageDB.mm */; };
@@ -33,6 +34,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		350A5D881CCA2EEB00EBB56A /* MassSendContentLogicController.xm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MassSendContentLogicController.xm; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		350A5D891CCA2F7600EBB56A /* MassSendContentLogicController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MassSendContentLogicController.mm; sourceTree = "<group>"; };
 		353BF18F1CC2572D00697912 /* AppDataMgr.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDataMgr.mm; sourceTree = "<group>"; };
 		353BF1901CC2572D00697912 /* AppDataMgr.xm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDataMgr.xm; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		353BF1911CC2572D00697912 /* ClickStreamMgr.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ClickStreamMgr.mm; sourceTree = "<group>"; };
@@ -128,6 +131,8 @@
 		35B4E2A01CBF801800029275 /* wxtweak */ = {
 			isa = PBXGroup;
 			children = (
+				350A5D891CCA2F7600EBB56A /* MassSendContentLogicController.mm */,
+				350A5D881CCA2EEB00EBB56A /* MassSendContentLogicController.xm */,
 				35C226D51CCA27C90025D1C0 /* MMMassSendContactSelectorViewController.mm */,
 				35C226D41CCA26B40025D1C0 /* MMMassSendContactSelectorViewController.xm */,
 				3568D5501CC5430D00F2C093 /* DeviceInfo.mm */,
@@ -325,6 +330,7 @@
 				3568D54D1CC53CC400F2C093 /* WCAdvertiseLogMgr.mm in Sources */,
 				353BF1A21CC2572D00697912 /* ClickStreamMgr.mm in Sources */,
 				353BF1A51CC2572D00697912 /* CUtility.mm in Sources */,
+				350A5D8A1CCA2F7600EBB56A /* MassSendContentLogicController.mm in Sources */,
 				353BF1A11CC2572D00697912 /* AppDataMgr.mm in Sources */,
 				353BF1A61CC2572D00697912 /* GameStatMgr.mm in Sources */,
 				35B4E2AA1CBF801800029275 /* wxtweak.mm in Sources */,
