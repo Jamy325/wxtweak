@@ -11,7 +11,6 @@
 		353BF1A21CC2572D00697912 /* ClickStreamMgr.mm in Sources */ = {isa = PBXBuildFile; fileRef = 353BF1911CC2572D00697912 /* ClickStreamMgr.mm */; };
 		353BF1A31CC2572D00697912 /* CMessageDB.mm in Sources */ = {isa = PBXBuildFile; fileRef = 353BF1931CC2572D00697912 /* CMessageDB.mm */; };
 		353BF1A41CC2572D00697912 /* CMessageMgr.mm in Sources */ = {isa = PBXBuildFile; fileRef = 353BF1951CC2572D00697912 /* CMessageMgr.mm */; };
-		353BF1A51CC2572D00697912 /* CUtility.mm in Sources */ = {isa = PBXBuildFile; fileRef = 353BF1971CC2572D00697912 /* CUtility.mm */; };
 		353BF1A61CC2572D00697912 /* GameStatMgr.mm in Sources */ = {isa = PBXBuildFile; fileRef = 353BF1991CC2572D00697912 /* GameStatMgr.mm */; };
 		353BF1A71CC2572D00697912 /* iConsole.mm in Sources */ = {isa = PBXBuildFile; fileRef = 353BF19B1CC2572D00697912 /* iConsole.mm */; };
 		353BF1A81CC2572D00697912 /* MMDumpReportMgr.mm in Sources */ = {isa = PBXBuildFile; fileRef = 353BF19D1CC2572D00697912 /* MMDumpReportMgr.mm */; };
@@ -40,7 +39,6 @@
 		353BF1941CC2572D00697912 /* CMessageDB.xm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CMessageDB.xm; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		353BF1951CC2572D00697912 /* CMessageMgr.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CMessageMgr.mm; sourceTree = "<group>"; };
 		353BF1961CC2572D00697912 /* CMessageMgr.xm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CMessageMgr.xm; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		353BF1971CC2572D00697912 /* CUtility.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CUtility.mm; sourceTree = "<group>"; };
 		353BF1981CC2572D00697912 /* CUtility.xm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CUtility.xm; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		353BF1991CC2572D00697912 /* GameStatMgr.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GameStatMgr.mm; sourceTree = "<group>"; };
 		353BF19A1CC2572D00697912 /* GameStatMgr.xm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GameStatMgr.xm; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
@@ -151,7 +149,6 @@
 				353BF1941CC2572D00697912 /* CMessageDB.xm */,
 				353BF1951CC2572D00697912 /* CMessageMgr.mm */,
 				353BF1961CC2572D00697912 /* CMessageMgr.xm */,
-				353BF1971CC2572D00697912 /* CUtility.mm */,
 				353BF1981CC2572D00697912 /* CUtility.xm */,
 				353BF1991CC2572D00697912 /* GameStatMgr.mm */,
 				353BF19A1CC2572D00697912 /* GameStatMgr.xm */,
@@ -318,7 +315,6 @@
 				353BF1AF1CC26B0E00697912 /* MMMonitorConfigMgr.mm in Sources */,
 				3568D54D1CC53CC400F2C093 /* WCAdvertiseLogMgr.mm in Sources */,
 				353BF1A21CC2572D00697912 /* ClickStreamMgr.mm in Sources */,
-				353BF1A51CC2572D00697912 /* CUtility.mm in Sources */,
 				353BF1A11CC2572D00697912 /* AppDataMgr.mm in Sources */,
 				353BF1A61CC2572D00697912 /* GameStatMgr.mm in Sources */,
 				35B4E2AA1CBF801800029275 /* wxtweak.mm in Sources */,

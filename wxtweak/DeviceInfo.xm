@@ -43,7 +43,7 @@
         return str;
 }
 
-
+/*
 
 + (_Bool)hasForceTouchCapability:(id)arg1 { %log; _Bool r = %orig; HBLogDebug(@" = %d", r); return r; }
 + (_Bool)isiPhone6Screen { %log; _Bool r = %orig; HBLogDebug(@" = %d", r); return r; }
@@ -92,6 +92,7 @@
 + (_Bool)isiPhone3G { %log; _Bool r = %orig; HBLogDebug(@" = %d", r); return r; }
 + (_Bool)isiPhone2G { %log; _Bool r = %orig; HBLogDebug(@" = %d", r); return r; }
 + (_Bool)isiPhone { %log; _Bool r = %orig; HBLogDebug(@" = %d", r); return r; }
+*/
 + (double)FreeDiskSpaceSize { %log; double r = %orig; HBLogDebug(@" = %f", r); return r; }
 + (double)TotalDiskSpaceSize { %log; double r = %orig; HBLogDebug(@" = %f", r); return r; }
 + (id)DCache { %log; id r = %orig; HBLogDebug(@" = %@", r); return r; }
