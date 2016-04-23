@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		350A5D8A1CCA2F7600EBB56A /* MassSendContentLogicController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 350A5D891CCA2F7600EBB56A /* MassSendContentLogicController.mm */; };
+		3517448E1CCA52DF001CA37B /* ZSYPopoverListView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3517448C1CCA52DF001CA37B /* ZSYPopoverListView.h */; };
+		3517448F1CCA52DF001CA37B /* ZSYPopoverListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3517448D1CCA52DF001CA37B /* ZSYPopoverListView.m */; };
+		351744921CCA53F5001CA37B /* CacheMemoryTestViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 351744901CCA53F5001CA37B /* CacheMemoryTestViewController.h */; };
+		351744931CCA53F5001CA37B /* CacheMemoryTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 351744911CCA53F5001CA37B /* CacheMemoryTestViewController.m */; };
 		353BF1A11CC2572D00697912 /* AppDataMgr.mm in Sources */ = {isa = PBXBuildFile; fileRef = 353BF18F1CC2572D00697912 /* AppDataMgr.mm */; };
 		353BF1A21CC2572D00697912 /* ClickStreamMgr.mm in Sources */ = {isa = PBXBuildFile; fileRef = 353BF1911CC2572D00697912 /* ClickStreamMgr.mm */; };
 		353BF1A31CC2572D00697912 /* CMessageDB.mm in Sources */ = {isa = PBXBuildFile; fileRef = 353BF1931CC2572D00697912 /* CMessageDB.mm */; };
@@ -27,10 +32,17 @@
 		35B4E29F1CBF801800029275 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35B4E29E1CBF801800029275 /* Foundation.framework */; };
 		35B4E2AA1CBF801800029275 /* wxtweak.mm in Sources */ = {isa = PBXBuildFile; fileRef = 35B4E2A91CBF801800029275 /* wxtweak.mm */; };
 		35B4E2B51CBF83A300029275 /* libsubstrate.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 35B4E2B41CBF83A300029275 /* libsubstrate.dylib */; };
+		35C226D61CCA27C90025D1C0 /* MMMassSendContactSelectorViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 35C226D51CCA27C90025D1C0 /* MMMassSendContactSelectorViewController.mm */; };
 		35C924A81CC0DE75006CE955 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35C924A71CC0DE75006CE955 /* UIKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		350A5D881CCA2EEB00EBB56A /* MassSendContentLogicController.xm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MassSendContentLogicController.xm; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		350A5D891CCA2F7600EBB56A /* MassSendContentLogicController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MassSendContentLogicController.mm; sourceTree = "<group>"; };
+		3517448C1CCA52DF001CA37B /* ZSYPopoverListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZSYPopoverListView.h; sourceTree = "<group>"; };
+		3517448D1CCA52DF001CA37B /* ZSYPopoverListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZSYPopoverListView.m; sourceTree = "<group>"; };
+		351744901CCA53F5001CA37B /* CacheMemoryTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CacheMemoryTestViewController.h; sourceTree = "<group>"; };
+		351744911CCA53F5001CA37B /* CacheMemoryTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CacheMemoryTestViewController.m; sourceTree = "<group>"; };
 		353BF18F1CC2572D00697912 /* AppDataMgr.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDataMgr.mm; sourceTree = "<group>"; };
 		353BF1901CC2572D00697912 /* AppDataMgr.xm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDataMgr.xm; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		353BF1911CC2572D00697912 /* ClickStreamMgr.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ClickStreamMgr.mm; sourceTree = "<group>"; };
@@ -76,6 +88,8 @@
 		35B4E2AE1CBF801800029275 /* wxtweak.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = wxtweak.plist; path = Package/Library/MobileSubstrate/DynamicLibraries/wxtweak.plist; sourceTree = "<group>"; };
 		35B4E2B41CBF83A300029275 /* libsubstrate.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsubstrate.dylib; path = ../../../../opt/iOSOpenDev/lib/libsubstrate.dylib; sourceTree = "<group>"; };
 		35BDFB1E1CC622C400FC0C87 /* wxUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = wxUtil.h; sourceTree = "<group>"; };
+		35C226D41CCA26B40025D1C0 /* MMMassSendContactSelectorViewController.xm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MMMassSendContactSelectorViewController.xm; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		35C226D51CCA27C90025D1C0 /* MMMassSendContactSelectorViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MMMassSendContactSelectorViewController.mm; sourceTree = "<group>"; };
 		35C924A71CC0DE75006CE955 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -123,6 +137,14 @@
 		35B4E2A01CBF801800029275 /* wxtweak */ = {
 			isa = PBXGroup;
 			children = (
+				351744901CCA53F5001CA37B /* CacheMemoryTestViewController.h */,
+				351744911CCA53F5001CA37B /* CacheMemoryTestViewController.m */,
+				3517448C1CCA52DF001CA37B /* ZSYPopoverListView.h */,
+				3517448D1CCA52DF001CA37B /* ZSYPopoverListView.m */,
+				350A5D891CCA2F7600EBB56A /* MassSendContentLogicController.mm */,
+				350A5D881CCA2EEB00EBB56A /* MassSendContentLogicController.xm */,
+				35C226D51CCA27C90025D1C0 /* MMMassSendContactSelectorViewController.mm */,
+				35C226D41CCA26B40025D1C0 /* MMMassSendContactSelectorViewController.xm */,
 				3568D5501CC5430D00F2C093 /* DeviceInfo.mm */,
 				3568D5511CC5430D00F2C093 /* DeviceInfo.xm */,
 				3568D5521CC5430D00F2C093 /* MMService.mm */,
@@ -224,6 +246,8 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3517448E1CCA52DF001CA37B /* ZSYPopoverListView.h in Headers */,
+				351744921CCA53F5001CA37B /* CacheMemoryTestViewController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,16 +334,20 @@
 			files = (
 				353BF1A41CC2572D00697912 /* CMessageMgr.mm in Sources */,
 				353BF1AC1CC2697700697912 /* MMCrashReportConnection.mm in Sources */,
+				35C226D61CCA27C90025D1C0 /* MMMassSendContactSelectorViewController.mm in Sources */,
 				3568D5651CC5430E00F2C093 /* Q2DMapStatistics.mm in Sources */,
 				353BF1A81CC2572D00697912 /* MMDumpReportMgr.mm in Sources */,
 				353BF1AF1CC26B0E00697912 /* MMMonitorConfigMgr.mm in Sources */,
 				3568D54D1CC53CC400F2C093 /* WCAdvertiseLogMgr.mm in Sources */,
 				353BF1A21CC2572D00697912 /* ClickStreamMgr.mm in Sources */,
+				350A5D8A1CCA2F7600EBB56A /* MassSendContentLogicController.mm in Sources */,
 				353BF1A11CC2572D00697912 /* AppDataMgr.mm in Sources */,
+				351744931CCA53F5001CA37B /* CacheMemoryTestViewController.m in Sources */,
 				353BF1A61CC2572D00697912 /* GameStatMgr.mm in Sources */,
 				35B4E2AA1CBF801800029275 /* wxtweak.mm in Sources */,
 				3568D5671CC5430E00F2C093 /* WCDeviceuserSportDevice.mm in Sources */,
 				353BF1A91CC2572D00697912 /* MMMonitorMgr.mm in Sources */,
+				3517448F1CCA52DF001CA37B /* ZSYPopoverListView.m in Sources */,
 				3568D54F1CC53CD200F2C093 /* CMainControll.mm in Sources */,
 				353BF1A31CC2572D00697912 /* CMessageDB.mm in Sources */,
 				353BF1A71CC2572D00697912 /* iConsole.mm in Sources */,
