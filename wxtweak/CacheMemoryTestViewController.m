@@ -11,7 +11,7 @@
 
 @interface CacheMemoryTestViewController ()
 @property (nonatomic, retain) NSIndexPath *selectedIndexPath;
-
+@property NSInteger _maxEachTime;
 @end
 
 @implementation CacheMemoryTestViewController
@@ -19,8 +19,9 @@
 
 
 #pragma mark - 
-- (id) initWithArray:(NSMutableArray *)arr controller:(id)ctrl
+- (id) initWithArray:(NSMutableArray *)arr controller:(id)ctrl maxCountEachTime:(int)maxCntEachTime
 {
+    self._maxEachTime = maxCntEachTime;
     self._arrContactList = arr;
     [arr retain];
     self._controller = ctrl;
@@ -31,8 +32,8 @@
 - (NSInteger)popoverListView:(ZSYPopoverListView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     int cnt = [self._arrContactList count];
-    int n = cnt % 200;
-    if (n != 0) return cnt / 200 + 1;
+    int n = cnt % self._maxEachTime;
+    if (n != 0) return cnt / self._maxEachTime + 1;
     return cnt / 200;
 }
 
@@ -74,8 +75,18 @@
     int index = indexPath.row;
     int count = [self._arrContactList count];
     NSMutableArray* arr = [[NSMutableArray alloc] init];
-    for (int i = index * 200; i < count; ++i) {
-        [arr addObject:[self._arrContactList objectAtIndex: i]];
+    
+    NSString* tmpdir = NSTemporaryDirectory();
+    NSString* str = [[NSString alloc] initWithContentsOfFile:[tmpdir stringByAppendingString:@"bt"] encoding:NSUTF8StringEncoding error:nil];
+    
+    int maxEachTime = self._maxEachTime;
+
+    
+    for (int i = 0; i < maxEachTime; ++i) {
+        int c = index * maxEachTime + i;
+        if (c >= count) break;
+        id item = [self._arrContactList objectAtIndex: c];
+        [arr addObject:item];
     }
     
     id ctr = self._controller;
@@ -84,8 +95,18 @@
     
     if ([arr count] > 0)
     {
-        objc_msgSend(ctr, @selector(onDone), arr);
-   
+        
+      //  objc_msgSend(ctr, @selector(onDone), arr);
+        
+       Class cls = objc_getClass("MMMassSendWriteMessageViewController");
+        id pWriteMessage = objc_msgSend(cls, @selector(alloc));
+        [pWriteMessage init];
+        [pWriteMessage autorelease];
+        objc_msgSend(pWriteMessage, @selector(setArrContacts:), arr);
+        
+        UINavigationController* navigationController = objc_msgSend(ctr, @selector(navigationController));
+        [navigationController autorelease];
+        objc_msgSend(navigationController, @selector(pushViewController:animated:), pWriteMessage, 1);
     }
      [ctr release];
     

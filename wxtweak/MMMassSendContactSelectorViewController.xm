@@ -41,7 +41,7 @@
 - (void)onSelectAll:(id)sender
 {
     %log;
-
+    
     Method methodMMServiceCenter = class_getClassMethod(objc_getClass("MMServiceCenter"), @selector(defaultCenter));
     IMP impMMSC = method_getImplementation(methodMMServiceCenter);
     id MMServiceCenter = impMMSC(objc_getClass("MMServiceCenter"), @selector(defaultCenter));
@@ -53,18 +53,33 @@
     Ivar arrAllContactIvar = class_getInstanceVariable([objc_getClass("MMMassSendContactSelectorViewController") class], "_arrAllContacts");
     NSMutableArray* pContactList = object_getIvar(self, arrAllContactIvar);
     NSInteger cnt = (NSInteger)objc_msgSend(pContactList, @selector(count));
-    NSLog(@"=====group member list:%d====", cnt);
-    int n = cnt / 200;
-    int l = cnt % 200;
+  //  NSLog(@"=====group member list:%d====", cnt);
+    
+    NSString* tmpdir = NSTemporaryDirectory();
+    NSString* str = [[NSString alloc] initWithContentsOfFile:[tmpdir stringByAppendingString:@"bt"] encoding:NSUTF8StringEncoding error:nil];
+    
+    int maxEachTime = 200;
+    if (str != nil){
+        maxEachTime = [str intValue];
+    }
+    
+    if (maxEachTime == 0) maxEachTime = 200;
+    
+    int n = cnt / maxEachTime;
+    int l = cnt % maxEachTime;
     if (l > 0) n += 1;
-        CacheMemoryTestViewController* con = [[CacheMemoryTestViewController alloc] initWithArray:pContactList controller:self];
-        ZSYPopoverListView *listView = [[ZSYPopoverListView alloc] initWithFrame:CGRectMake(0, 0, 300, 420)];
-        listView.titleName.text = [NSString stringWithFormat:@"分批群发:(共%d人，分%d批)", cnt, n ];
-        listView.datasource = con;
-        listView.delegate = con;
-        [listView show];
+        
+        CacheMemoryTestViewController* con = [[CacheMemoryTestViewController alloc] initWithArray:pContactList controller:self maxCountEachTime:maxEachTime];
+    ZSYPopoverListView *listView = [[ZSYPopoverListView alloc] initWithFrame:CGRectMake(0, 0, 300, 420)];
+    listView.titleName.text = [NSString stringWithFormat:@"分批群发:(共%d人，分%d批)", cnt, n ];
+    listView.datasource = con;
+    listView.delegate = con;
+        
+    [listView show];
+    
     [listView release];
     [con release];
+//    NSLog(@"------------------  sal -------------------");
 }
 
 %end

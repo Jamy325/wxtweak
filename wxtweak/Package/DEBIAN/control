@@ -1,6 +1,6 @@
-Package: com.jamy.wxtweak
+Package: com.tencent.wxtweak
 Name: wxtweak
-Version: 1.5-0
+Version: 1.6-6
 Description: 
 Section: System
 Depends: firmware (>= 5.0), mobilesubstrate

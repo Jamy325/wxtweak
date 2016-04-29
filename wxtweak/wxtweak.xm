@@ -9,6 +9,8 @@
 
 
 #include "wxUtil.h"
+#include <sys/stat.h>
+#include <sys/types.h>
 
 
 NSString* md5HexDigest(NSString* input)
@@ -89,8 +91,10 @@ void redirectNSLogToDocumentFolder()
      NSString *logDirectory = [[paths objectAtIndex:0] stringByAppendingPathComponent:@"Log"];
     
     //NSString* bid = [[NSBundle mainBundle] bundleIdentifier];
-   // NSString *logDirectory = [NSString stringWithFormat:@"/private/var/mobile/Media/TouchSprite/log/%@", bid];
-    
+ //   NSString* str = [bid stringByReplacingOccurrenceOfString:@"." withString:@"_"];
+  //  NSString *logDirectory =@"/private/var/mobile/Media/TouchSprite/log/wx";
+    //[NSString stringWithFormat:@"/private/var/mobile/Media/TouchSprite/log/wx/", str];
+
     NSFileManager *fileManager = [NSFileManager defaultManager];
 	BOOL fileExists = [fileManager fileExistsAtPath:logDirectory];
     if (!fileExists) {
@@ -99,7 +103,7 @@ void redirectNSLogToDocumentFolder()
     
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"zh_CN"]];
-    [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"]; //每次启动后都保存一个新的日志文件中
+    [formatter setDateFormat:@"yyyy-MM-dd-HH:mm:ss"]; //每次启动后都保存一个新的日志文件中
     NSString *dateStr = [formatter stringFromDate:[NSDate date]];
     NSString *logFilePath = [logDirectory stringByAppendingFormat:@"/%@.log",dateStr];
     
@@ -634,8 +638,8 @@ void redirectNSLogToDocumentFolder()
 {
     %log;
     _Bool r = %orig(arg1, arg2);
-    redirectNSLogToDocumentFolder();
     
+    redirectNSLogToDocumentFolder();
     return r;
 }
 

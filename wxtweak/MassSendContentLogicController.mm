@@ -57,8 +57,10 @@ static void (*_logos_orig$_ungrouped$MassSendContentLogicController$OpenDetailIn
 
 static void _logos_method$_ungrouped$MassSendContentLogicController$OpenDetailInfo(_LOGOS_SELF_TYPE_NORMAL MassSendContentLogicController* _LOGOS_SELF_CONST self, SEL _cmd) {
         HBLogDebug(@"-[<MassSendContentLogicController: %p> OpenDetailInfo]", self);
-    _logos_orig$_ungrouped$MassSendContentLogicController$OpenDetailInfo(self, _cmd);
-    
+
+
+
+
 
 
 
@@ -84,4 +86,4 @@ static void _logos_method$_ungrouped$MassSendContentLogicController$OpenDetailIn
 
 static __attribute__((constructor)) void _logosLocalInit() {
 {Class _logos_class$_ungrouped$MassSendContentLogicController = objc_getClass("MassSendContentLogicController"); if (_logos_class$_ungrouped$MassSendContentLogicController) {MSHookMessageEx(_logos_class$_ungrouped$MassSendContentLogicController, @selector(OpenDetailInfo), (IMP)&_logos_method$_ungrouped$MassSendContentLogicController$OpenDetailInfo, (IMP*)&_logos_orig$_ungrouped$MassSendContentLogicController$OpenDetailInfo);} else {HBLogError(@"logos: nil class %s", "MassSendContentLogicController");}} }
-#line 60 "/Users/jamy/works/wxtweak/wxtweak/MassSendContentLogicController.xm"
+#line 62 "/Users/jamy/works/wxtweak/wxtweak/MassSendContentLogicController.xm"

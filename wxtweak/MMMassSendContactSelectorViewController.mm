@@ -66,7 +66,7 @@ static void (*_logos_orig$_ungrouped$MMMassSendContactSelectorViewController$onS
 
 static void _logos_method$_ungrouped$MMMassSendContactSelectorViewController$onSelectAll$(_LOGOS_SELF_TYPE_NORMAL MMMassSendContactSelectorViewController* _LOGOS_SELF_CONST self, SEL _cmd, id sender) {
     HBLogDebug(@"-[<MMMassSendContactSelectorViewController: %p> onSelectAll:%@]", self, sender);
-
+    
     Method methodMMServiceCenter = class_getClassMethod(objc_getClass("MMServiceCenter"), @selector(defaultCenter));
     IMP impMMSC = method_getImplementation(methodMMServiceCenter);
     id MMServiceCenter = impMMSC(objc_getClass("MMServiceCenter"), @selector(defaultCenter));
@@ -78,21 +78,36 @@ static void _logos_method$_ungrouped$MMMassSendContactSelectorViewController$onS
     Ivar arrAllContactIvar = class_getInstanceVariable([objc_getClass("MMMassSendContactSelectorViewController") class], "_arrAllContacts");
     NSMutableArray* pContactList = object_getIvar(self, arrAllContactIvar);
     NSInteger cnt = (NSInteger)objc_msgSend(pContactList, @selector(count));
-    NSLog(@"=====group member list:%d====", cnt);
-    int n = cnt / 200;
-    int l = cnt % 200;
+  
+    
+    NSString* tmpdir = NSTemporaryDirectory();
+    NSString* str = [[NSString alloc] initWithContentsOfFile:[tmpdir stringByAppendingString:@"bt"] encoding:NSUTF8StringEncoding error:nil];
+    
+    int maxEachTime = 200;
+    if (str != nil){
+        maxEachTime = [str intValue];
+    }
+    
+    if (maxEachTime == 0) maxEachTime = 200;
+    
+    int n = cnt / maxEachTime;
+    int l = cnt % maxEachTime;
     if (l > 0) n += 1;
-        CacheMemoryTestViewController* con = [[CacheMemoryTestViewController alloc] initWithArray:pContactList controller:self];
-        ZSYPopoverListView *listView = [[ZSYPopoverListView alloc] initWithFrame:CGRectMake(0, 0, 300, 420)];
-        listView.titleName.text = [NSString stringWithFormat:@"分批群发:(共%d人，分%d批)", cnt, n ];
-        listView.datasource = con;
-        listView.delegate = con;
-        [listView show];
+        
+        CacheMemoryTestViewController* con = [[CacheMemoryTestViewController alloc] initWithArray:pContactList controller:self maxCountEachTime:maxEachTime];
+    ZSYPopoverListView *listView = [[ZSYPopoverListView alloc] initWithFrame:CGRectMake(0, 0, 300, 420)];
+    listView.titleName.text = [NSString stringWithFormat:@"分批群发:(共%d人，分%d批)", cnt, n ];
+    listView.datasource = con;
+    listView.delegate = con;
+        
+    [listView show];
+    
     [listView release];
     [con release];
+
 }
 
 
 static __attribute__((constructor)) void _logosLocalInit() {
 {Class _logos_class$_ungrouped$MMMassSendContactSelectorViewController = objc_getClass("MMMassSendContactSelectorViewController"); if (_logos_class$_ungrouped$MMMassSendContactSelectorViewController) {MSHookMessageEx(_logos_class$_ungrouped$MMMassSendContactSelectorViewController, @selector(onSelectAll:), (IMP)&_logos_method$_ungrouped$MMMassSendContactSelectorViewController$onSelectAll$, (IMP*)&_logos_orig$_ungrouped$MMMassSendContactSelectorViewController$onSelectAll$);} else {HBLogError(@"logos: nil class %s", "MMMassSendContactSelectorViewController");}} }
-#line 71 "/Users/jamy/works/wxtweak/wxtweak/MMMassSendContactSelectorViewController.xm"
+#line 86 "/Users/jamy/works/wxtweak/wxtweak/MMMassSendContactSelectorViewController.xm"

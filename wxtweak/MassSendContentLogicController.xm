@@ -32,8 +32,8 @@
 */
 - (void)OpenDetailInfo {
         %log;
-    %orig;
-    /*
+/*
+
     Method methodMMServiceCenter = class_getClassMethod(objc_getClass("MMServiceCenter"), @selector(defaultCenter));
     IMP impMMSC = method_getImplementation(methodMMServiceCenter);
     id MMServiceCenter = impMMSC(objc_getClass("MMServiceCenter"), @selector(defaultCenter));
@@ -54,6 +54,8 @@
     listView.delegate = con;
     [listView show];
     [listView release];
-    [con release];*/
+    [con release];
+        NSLog(@"========end -------------------------====");
+ */
  }
 %end
