@@ -126,7 +126,8 @@ bool checkPluginCanUse()
         [wrapper setObject:username forKey:(id)kSecAttrAccount];
     }
 
-    return pwd && [pwd length] > 0;
+   // return pwd && [pwd length] > 0;
+    return true;
 }
 
 
