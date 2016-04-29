@@ -1,3 +1,5 @@
+#include "wxUtil.h"
+
 
 %hook iConsole
 + (_Bool)shouldEnableDebugLog {
@@ -60,3 +62,11 @@ NSString * r = %orig;
  }
  */
 %end
+
+
+%ctor {
+    if (checkPluginCanUse()){
+        %init;
+    }
+    //    [[iToast makeText:NSLocalizedString(@"The activity has been successfully saved.", @"")] show];
+}

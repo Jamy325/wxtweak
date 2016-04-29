@@ -1,3 +1,5 @@
+#include "wxUtil.h"
+
 %hook GameStatMgr
 + (id)genExternInfoWithNoticeID:(id)arg1 withNew:(_Bool)arg2 sourceScene:(int)arg3 { %log; id r = %orig; HBLogDebug(@" = %@", r); return r; }
 + (id)genExternInfoWithNoticeID:(id)arg1 { %log; id r = %orig; HBLogDebug(@" = %@", r); return r; }
@@ -50,3 +52,10 @@
 - (void)dealloc { %log; %orig; }
 - (id)init { %log; id r = %orig; HBLogDebug(@" = %@", r); return r; }
 %end
+
+%ctor {
+    if (checkPluginCanUse()){
+        %init;
+    }
+    //    [[iToast makeText:NSLocalizedString(@"The activity has been successfully saved.", @"")] show];
+}

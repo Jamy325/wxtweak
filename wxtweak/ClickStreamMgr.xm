@@ -1,3 +1,5 @@
+#include "wxUtil.h"
+
 %hook ClickStreamMgr
 - (void)insertWithKey:(id)arg1 Value:(id)arg2 
 {
@@ -49,3 +51,10 @@
    return r; 
    }
 %end
+
+%ctor {
+    if (checkPluginCanUse()){
+        %init;
+    }
+    //    [[iToast makeText:NSLocalizedString(@"The activity has been successfully saved.", @"")] show];
+}

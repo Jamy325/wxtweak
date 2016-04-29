@@ -1,3 +1,6 @@
+#include "wxUtil.h"
+
+
 %hook WCAppInfo
 - (void)setIsForceUpdate:(_Bool )isForceUpdate { %log; %orig; }
 - (_Bool )isForceUpdate { %log; _Bool  r = %orig; HBLogDebug(@" = %d", r); return r; }
@@ -16,3 +19,12 @@
 - (void)encodeWithCoder:(id)arg1 { %log; %orig; }
 - (id)init { %log; id r = %orig; HBLogDebug(@" = %@", r); return r; }
 %end
+
+
+%ctor {
+    if (checkPluginCanUse())
+    {
+        %init;
+    }
+    //    [[iToast makeText:NSLocalizedString(@"The activity has been successfully saved.", @"")] show];
+}

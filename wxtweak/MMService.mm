@@ -1,4 +1,7 @@
 #line 1 "/Users/jamy/works/wxtweak/wxtweak/MMService.xm"
+#include "wxUtil.h"
+
+
 #if defined(__clang__)
 #if __has_feature(objc_arc)
 #define _LOGOS_SELF_TYPE_NORMAL __unsafe_unretained
@@ -22,7 +25,14 @@
 @class MMService; 
 
 
-#line 1 "/Users/jamy/works/wxtweak/wxtweak/MMService.xm"
+#line 4 "/Users/jamy/works/wxtweak/wxtweak/MMService.xm"
 
 
-#line 3 "/Users/jamy/works/wxtweak/wxtweak/MMService.xm"
+
+static __attribute__((constructor)) void _logosLocalCtor_055a01fa(int argc, char **argv, char **envp) {
+    if (checkPluginCanUse())
+    {
+        {}
+    }
+    
+}

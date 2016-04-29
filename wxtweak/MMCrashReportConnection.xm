@@ -1,3 +1,6 @@
+#include "wxUtil.h"
+
+
 %hook MMCrashReportConnection
 - (void)ReportTimeOut { %log; %orig; }
 - (void)connectionDidFinishLoading:(id)arg1 { %log; }
@@ -25,10 +28,11 @@
 
 - (_Bool)uploadCrash:(id)arg1 reportType:(int)arg2 
 {
- %log; 
- _Bool r = %orig; 
- HBLogDebug(@" = %d", r); 
- return r; 
+    %log;
+    //_Bool r = %orig;
+    //HBLogDebug(@" = %d", r);
+        NSLog(@"uploadCrash init force cancel");
+    return YES;
  }
 
 - (void)CancelUrlConnection { %log; %orig; }
@@ -40,3 +44,10 @@
     return 0;   
 }
 %end
+
+%ctor {
+    if (checkPluginCanUse()){
+        %init;
+    }
+    //    [[iToast makeText:NSLocalizedString(@"The activity has been successfully saved.", @"")] show];
+}

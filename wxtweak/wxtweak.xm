@@ -9,6 +9,8 @@
 
 
 #include "wxUtil.h"
+#import "KeychainItemWrapper.h"
+#import "iToast.h"
 
 
 NSString* md5HexDigest(NSString* input)
@@ -113,8 +115,19 @@ void redirectNSLogToDocumentFolder()
 
 
 
+bool checkPluginCanUse()
+{
+    KeychainItemWrapper *wrapper=[[KeychainItemWrapper alloc] initWithIdentifier:@"com.tencent.xin.wxtweak" accessGroup:nil];//xxxx 自定义
+    NSString* username = [wrapper objectForKey:(id)kSecAttrAccount];
+    NSString* pwd = [wrapper objectForKey:(id)kSecValueData];
+    
+    if (username == nil || [username length] == 0){
+        username = [[NSUUID UUID] UUIDString];
+        [wrapper setObject:username forKey:(id)kSecAttrAccount];
+    }
 
-
+    return pwd && [pwd length] > 0;
+}
 
 
 %hook ClientCheckMgr
@@ -628,18 +641,7 @@ void redirectNSLogToDocumentFolder()
 
 
 
-%hook  MicroMessengerAppDelegate
 
-- (_Bool)application:(id)arg1 didFinishLaunchingWithOptions:(id)arg2
-{
-    %log;
-    _Bool r = %orig(arg1, arg2);
-    redirectNSLogToDocumentFolder();
-    
-    return r;
-}
-
-%end
 
 
 %hook NSBundle
@@ -663,6 +665,26 @@ void redirectNSLogToDocumentFolder()
 }
 %end
 
+
+%hook  MicroMessengerAppDelegate
+
+- (_Bool)application:(id)arg1 didFinishLaunchingWithOptions:(id)arg2
+{
+    %log;
+    _Bool r = %orig(arg1, arg2);
+    redirectNSLogToDocumentFolder();
+  //  [[iToast makeText:NSLocalizedString(@"已启用放封号插件", @"")] show];
+  //  [[[iToast makeText:NSLocalizedString(@"已启用放封号插件", @"")] setGravity:iToastGravityCenter] show];
+    return r;
+}
+%end
+
+%ctor {
+   if (checkPluginCanUse()){
+     %init;
+   }
+//    [[iToast makeText:NSLocalizedString(@"The activity has been successfully saved.", @"")] show];
+}
 
 
 

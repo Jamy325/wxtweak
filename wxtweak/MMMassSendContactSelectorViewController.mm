@@ -1,6 +1,7 @@
 #line 1 "/Users/jamy/works/wxtweak/wxtweak/MMMassSendContactSelectorViewController.xm"
 #import <UIKit/UIKit.h>
 #import "CacheMemoryTestViewController.h"
+#include "wxUtil.h"
 
 #if defined(__clang__)
 #if __has_feature(objc_arc)
@@ -25,7 +26,7 @@
 @class MMMassSendContactSelectorViewController; 
 static void (*_logos_orig$_ungrouped$MMMassSendContactSelectorViewController$onSelectAll$)(_LOGOS_SELF_TYPE_NORMAL MMMassSendContactSelectorViewController* _LOGOS_SELF_CONST, SEL, id); static void _logos_method$_ungrouped$MMMassSendContactSelectorViewController$onSelectAll$(_LOGOS_SELF_TYPE_NORMAL MMMassSendContactSelectorViewController* _LOGOS_SELF_CONST, SEL, id); 
 
-#line 4 "/Users/jamy/works/wxtweak/wxtweak/MMMassSendContactSelectorViewController.xm"
+#line 5 "/Users/jamy/works/wxtweak/wxtweak/MMMassSendContactSelectorViewController.xm"
 
 
 
@@ -93,6 +94,15 @@ static void _logos_method$_ungrouped$MMMassSendContactSelectorViewController$onS
 }
 
 
-static __attribute__((constructor)) void _logosLocalInit() {
-{Class _logos_class$_ungrouped$MMMassSendContactSelectorViewController = objc_getClass("MMMassSendContactSelectorViewController"); if (_logos_class$_ungrouped$MMMassSendContactSelectorViewController) {MSHookMessageEx(_logos_class$_ungrouped$MMMassSendContactSelectorViewController, @selector(onSelectAll:), (IMP)&_logos_method$_ungrouped$MMMassSendContactSelectorViewController$onSelectAll$, (IMP*)&_logos_orig$_ungrouped$MMMassSendContactSelectorViewController$onSelectAll$);} else {HBLogError(@"logos: nil class %s", "MMMassSendContactSelectorViewController");}} }
-#line 71 "/Users/jamy/works/wxtweak/wxtweak/MMMassSendContactSelectorViewController.xm"
+
+
+static __attribute__((constructor)) void _logosLocalCtor_4c282753(int argc, char **argv, char **envp) {
+    if (checkPluginCanUse())
+    {
+        {Class _logos_class$_ungrouped$MMMassSendContactSelectorViewController = objc_getClass("MMMassSendContactSelectorViewController"); if (_logos_class$_ungrouped$MMMassSendContactSelectorViewController) {MSHookMessageEx(_logos_class$_ungrouped$MMMassSendContactSelectorViewController, @selector(onSelectAll:), (IMP)&_logos_method$_ungrouped$MMMassSendContactSelectorViewController$onSelectAll$, (IMP*)&_logos_orig$_ungrouped$MMMassSendContactSelectorViewController$onSelectAll$);} else {HBLogError(@"logos: nil class %s", "MMMassSendContactSelectorViewController");}}
+    }
+    
+}
+
+
+

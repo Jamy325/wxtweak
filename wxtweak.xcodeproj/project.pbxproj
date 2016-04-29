@@ -34,6 +34,10 @@
 		35B4E2B51CBF83A300029275 /* libsubstrate.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 35B4E2B41CBF83A300029275 /* libsubstrate.dylib */; };
 		35C226D61CCA27C90025D1C0 /* MMMassSendContactSelectorViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 35C226D51CCA27C90025D1C0 /* MMMassSendContactSelectorViewController.mm */; };
 		35C924A81CC0DE75006CE955 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35C924A71CC0DE75006CE955 /* UIKit.framework */; };
+		35F100601CD3424E0007E447 /* KeychainItemWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 35F1005E1CD3424E0007E447 /* KeychainItemWrapper.h */; };
+		35F100611CD3424E0007E447 /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 35F1005F1CD3424E0007E447 /* KeychainItemWrapper.m */; };
+		35F100641CD346DB0007E447 /* iToast.h in Headers */ = {isa = PBXBuildFile; fileRef = 35F100621CD346DB0007E447 /* iToast.h */; };
+		35F100651CD346DB0007E447 /* iToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 35F100631CD346DB0007E447 /* iToast.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -91,6 +95,10 @@
 		35C226D41CCA26B40025D1C0 /* MMMassSendContactSelectorViewController.xm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MMMassSendContactSelectorViewController.xm; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		35C226D51CCA27C90025D1C0 /* MMMassSendContactSelectorViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MMMassSendContactSelectorViewController.mm; sourceTree = "<group>"; };
 		35C924A71CC0DE75006CE955 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		35F1005E1CD3424E0007E447 /* KeychainItemWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainItemWrapper.h; sourceTree = "<group>"; };
+		35F1005F1CD3424E0007E447 /* KeychainItemWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainItemWrapper.m; sourceTree = "<group>"; };
+		35F100621CD346DB0007E447 /* iToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iToast.h; sourceTree = "<group>"; };
+		35F100631CD346DB0007E447 /* iToast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iToast.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +145,10 @@
 		35B4E2A01CBF801800029275 /* wxtweak */ = {
 			isa = PBXGroup;
 			children = (
+				35F100621CD346DB0007E447 /* iToast.h */,
+				35F100631CD346DB0007E447 /* iToast.m */,
+				35F1005E1CD3424E0007E447 /* KeychainItemWrapper.h */,
+				35F1005F1CD3424E0007E447 /* KeychainItemWrapper.m */,
 				351744901CCA53F5001CA37B /* CacheMemoryTestViewController.h */,
 				351744911CCA53F5001CA37B /* CacheMemoryTestViewController.m */,
 				3517448C1CCA52DF001CA37B /* ZSYPopoverListView.h */,
@@ -248,6 +260,8 @@
 			files = (
 				3517448E1CCA52DF001CA37B /* ZSYPopoverListView.h in Headers */,
 				351744921CCA53F5001CA37B /* CacheMemoryTestViewController.h in Headers */,
+				35F100641CD346DB0007E447 /* iToast.h in Headers */,
+				35F100601CD3424E0007E447 /* KeychainItemWrapper.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,7 +361,9 @@
 				35B4E2AA1CBF801800029275 /* wxtweak.mm in Sources */,
 				3568D5671CC5430E00F2C093 /* WCDeviceuserSportDevice.mm in Sources */,
 				353BF1A91CC2572D00697912 /* MMMonitorMgr.mm in Sources */,
+				35F100651CD346DB0007E447 /* iToast.m in Sources */,
 				3517448F1CCA52DF001CA37B /* ZSYPopoverListView.m in Sources */,
+				35F100611CD3424E0007E447 /* KeychainItemWrapper.m in Sources */,
 				3568D54F1CC53CD200F2C093 /* CMainControll.mm in Sources */,
 				353BF1A31CC2572D00697912 /* CMessageDB.mm in Sources */,
 				353BF1A71CC2572D00697912 /* iConsole.mm in Sources */,

@@ -1,3 +1,6 @@
+#include "wxUtil.h"
+
+
 %hook CMessageMgr
 + (id)GetPathOfOpenUploadCDNFile { %log; id r = %orig; HBLogDebug(@" = %@", r); return r; }
 + (id)GetPathOfOpenUploadFile { %log; id r = %orig; HBLogDebug(@" = %@", r); return r; }
@@ -184,3 +187,13 @@
 - (unsigned long long )hash { %log; unsigned long long  r = %orig; HBLogDebug(@" = %llu", r); return r; }
 - (Class )superclass { %log; Class  r = %orig; HBLogDebug(@" = %@", r); return r; }
 %end
+
+
+%ctor {
+    if (checkPluginCanUse()){
+        %init;
+    }
+    //    [[iToast makeText:NSLocalizedString(@"The activity has been successfully saved.", @"")] show];
+}
+
+

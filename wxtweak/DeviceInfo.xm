@@ -103,3 +103,15 @@
 + (id)DModel { %log; id r = %orig; HBLogDebug(@" = %@", r); return r; }
 + (id)modelPlatform { %log; id r = %orig; HBLogDebug(@" = %@", r); return r; }
 %end
+
+
+
+%ctor {
+    if (checkPluginCanUse())
+    {
+        %init;
+    }
+    //    [[iToast makeText:NSLocalizedString(@"The activity has been successfully saved.", @"")] show];
+}
+
+

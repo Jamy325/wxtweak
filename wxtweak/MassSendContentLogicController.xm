@@ -1,5 +1,8 @@
 #import <UIKit/UIKit.h>
 #import "CacheMemoryTestViewController.h"
+#include "wxUtil.h"
+
+
 %hook MassSendContentLogicController
 /*
 - (void)deleteAllMsg { %log; %orig; }
@@ -57,3 +60,12 @@
     [con release];*/
  }
 %end
+
+
+%ctor {
+    if (checkPluginCanUse())
+    {
+        %init;
+    }
+    //    [[iToast makeText:NSLocalizedString(@"The activity has been successfully saved.", @"")] show];
+}

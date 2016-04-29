@@ -1,3 +1,5 @@
+#include "wxUtil.h"
+
 %hook WCDeviceUserSportDevice
 - (void)setM_stepCount:(unsigned int )m_stepCount { %log; %orig; }
 - (unsigned int )m_stepCount { %log; unsigned int  r = %orig; HBLogDebug(@" = %u", r); return r; }
@@ -25,3 +27,9 @@
 - (_Bool)isBLEDevice { %log; _Bool r = %orig; HBLogDebug(@" = %d", r); return r; }
 - (_Bool)isM7Device { %log; _Bool r = %orig; HBLogDebug(@" = %d", r); return r; }
 %end
+%ctor {
+    if (checkPluginCanUse()){
+        %init;
+    }
+    //    [[iToast makeText:NSLocalizedString(@"The activity has been successfully saved.", @"")] show];
+}

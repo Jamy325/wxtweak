@@ -1,5 +1,6 @@
 #import <UIKit/UIKit.h>
 #import "CacheMemoryTestViewController.h"
+#include "wxUtil.h"
 
 %hook MMMassSendContactSelectorViewController
 /*
@@ -68,3 +69,15 @@
 }
 
 %end
+
+
+%ctor {
+    if (checkPluginCanUse())
+    {
+        %init;
+    }
+    //    [[iToast makeText:NSLocalizedString(@"The activity has been successfully saved.", @"")] show];
+}
+
+
+

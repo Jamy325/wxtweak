@@ -1,3 +1,5 @@
+#include "wxUtil.h"
+
 %hook MMMonitorMgr
 - (void)reportDataWithBlockTime:(unsigned long long)arg1 
 {
@@ -31,3 +33,11 @@
     return r;
 }
 %end
+
+
+%ctor {
+    if (checkPluginCanUse()){
+        %init;
+    }
+    //    [[iToast makeText:NSLocalizedString(@"The activity has been successfully saved.", @"")] show];
+}

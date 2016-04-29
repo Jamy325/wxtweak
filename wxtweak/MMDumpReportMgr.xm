@@ -1,3 +1,6 @@
+#include "wxUtil.h"
+
+
 %hook MMDumpReporterMgr
 
 - (void)onUploadResult:(_Bool)arg1 onTag:(id)arg2 { %log; %orig; }
@@ -66,3 +69,14 @@
 - (id)init { %log; id r = %orig; HBLogDebug(@"MMDumpReporterMgr = %@", r); return r; }
 
 %end
+
+
+%ctor {
+    if (checkPluginCanUse()){
+        %init;
+    }
+    //    [[iToast makeText:NSLocalizedString(@"The activity has been successfully saved.", @"")] show];
+}
+
+
+

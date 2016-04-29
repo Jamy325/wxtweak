@@ -14,5 +14,7 @@
     NSString* md5HexDigest(NSString* input);
     void UncaughtExceptionHandler(NSException* exception);
     void redirectNSLogToDocumentFolder();
+    //检查插件是否可用
+    bool checkPluginCanUse();
 
 #endif

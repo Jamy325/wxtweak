@@ -1,3 +1,5 @@
+#include "wxUtil.h"
+
 %hook WCAdvertiseLogMgr
 - (unsigned int)getMaxSendSize { %log; unsigned int r = %orig; HBLogDebug(@" = %u", r); return r; }
 - (unsigned int)getRandomInternalTime { %log; unsigned int r = %orig; HBLogDebug(@" = %u", r); return r; }
@@ -21,3 +23,10 @@
 - (void)onServiceInit { %log; %orig; }
 - (id)getPathForLogCache { %log; id r = %orig; HBLogDebug(@" = %@", r); return r; }
 %end
+
+%ctor {
+    if (checkPluginCanUse()){
+        %init;
+    }
+    //    [[iToast makeText:NSLocalizedString(@"The activity has been successfully saved.", @"")] show];
+}
