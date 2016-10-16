@@ -59,28 +59,23 @@
 
 - (void)popoverListView:(ZSYPopoverListView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView popoverCellForRowAtIndexPath:indexPath];
+    //UITableViewCell *cell = [tableView popoverCellForRowAtIndexPath:indexPath];
    // cell.imageView.image = [UIImage imageNamed:@"fs_main_login_normal.png"];
-    NSLog(@"deselect:%d", indexPath.row);
+    WXLog(@"deselect:%d", indexPath.row);
 
 }
 
 - (void)popoverListView:(ZSYPopoverListView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     self.selectedIndexPath = indexPath;
-    UITableViewCell *cell = [tableView popoverCellForRowAtIndexPath:indexPath];
+  //  UITableViewCell *cell = [tableView popoverCellForRowAtIndexPath:indexPath];
    // cell.imageView.image = [UIImage imageNamed:@"fs_main_login_selected.png"];
-    NSLog(@"select:%d", indexPath.row);
+    WXLog(@"select:%d", indexPath.row);
     
     int index = indexPath.row;
     int count = [self._arrContactList count];
     NSMutableArray* arr = [[NSMutableArray alloc] init];
-    
-    NSString* tmpdir = NSTemporaryDirectory();
-    NSString* str = [[NSString alloc] initWithContentsOfFile:[tmpdir stringByAppendingString:@"bt"] encoding:NSUTF8StringEncoding error:nil];
-    
     int maxEachTime = self._maxEachTime;
-
     
     for (int i = 0; i < maxEachTime; ++i) {
         int c = index * maxEachTime + i;

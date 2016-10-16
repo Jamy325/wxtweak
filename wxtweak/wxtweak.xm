@@ -11,6 +11,8 @@
 #include "wxUtil.h"
 #include <sys/stat.h>
 #include <sys/types.h>
+#import "KeychainItemWrapper.h"
+#import "iToast.h"
 
 
 NSString* md5HexDigest(NSString* input)
@@ -22,7 +24,7 @@ NSString* md5HexDigest(NSString* input)
     NSMutableString *ret = [NSMutableString stringWithCapacity:CC_MD5_DIGEST_LENGTH*2];//
     
     for(int i = 0; i < CC_MD5_DIGEST_LENGTH; i++) {
-        [ret appendFormat:@"%x", result[i]];
+        [ret appendFormat:@"%02x", result[i]];
     }
     return ret;
 }
@@ -74,7 +76,7 @@ void UncaughtExceptionHandler(NSException* exception)
 }
 
 
-void redirectNSLogToDocumentFolder()
+void redirectWXLogToDocumentFolder()
 {
     //如果已经连接Xcode调试则不输出到文件
     if(isatty(STDOUT_FILENO)) {
@@ -86,7 +88,7 @@ void redirectNSLogToDocumentFolder()
         return;
     }
     
-    //将NSlog打印信息保存到Document目录下的Log文件夹下
+    //将WXLog打印信息保存到Document目录下的Log文件夹下
       NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
      NSString *logDirectory = [[paths objectAtIndex:0] stringByAppendingPathComponent:@"Log"];
     
@@ -94,6 +96,8 @@ void redirectNSLogToDocumentFolder()
  //   NSString* str = [bid stringByReplacingOccurrenceOfString:@"." withString:@"_"];
   //  NSString *logDirectory =@"/private/var/mobile/Media/TouchSprite/log/wx";
     //[NSString stringWithFormat:@"/private/var/mobile/Media/TouchSprite/log/wx/", str];
+    
+    NSString* delLogCmd = [NSString stringWithFormat:@"find %@/*.log -mtime +5 -exec rm -rf {} \\;", logDirectory];
 
     NSFileManager *fileManager = [NSFileManager defaultManager];
 	BOOL fileExists = [fileManager fileExistsAtPath:logDirectory];
@@ -101,15 +105,24 @@ void redirectNSLogToDocumentFolder()
 		[fileManager createDirectoryAtPath:logDirectory  withIntermediateDirectories:YES attributes:nil error:nil];
 	}
     
+    WXLog(@"%@", delLogCmd);
+    const char* strCmd = [delLogCmd UTF8String];
+    system(strCmd);
+    
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"zh_CN"]];
     [formatter setDateFormat:@"yyyy-MM-dd-HH:mm:ss"]; //每次启动后都保存一个新的日志文件中
     NSString *dateStr = [formatter stringFromDate:[NSDate date]];
     NSString *logFilePath = [logDirectory stringByAppendingFormat:@"/%@.log",dateStr];
     
+    
     // 将log输入到文件
     freopen([logFilePath cStringUsingEncoding:NSASCIIStringEncoding], "a+", stdout);
     freopen([logFilePath cStringUsingEncoding:NSASCIIStringEncoding], "a+", stderr);
+    
+  //  freopen("/dev/null", "a+", stdout);
+  //  freopen("/dev/null", "a+", stderr);
+    
     
     //未捕获的Objective-C异常日志
     NSSetUncaughtExceptionHandler (&UncaughtExceptionHandler);
@@ -117,8 +130,58 @@ void redirectNSLogToDocumentFolder()
 
 
 
-
-
+bool checkPluginCanUse()
+{
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *tmpdir = [[paths objectAtIndex:0] stringByAppendingPathComponent:@"/Log/config.dat"];
+    BOOL fileExists = [fileManager fileExistsAtPath:tmpdir];
+   WXLog(@"=========================file is exist:%@ %d", tmpdir, fileExists);
+    //检查目录是否存在，不存在则认为不合法
+    if (!fileExists) {
+        NSString *tmp = [[paths objectAtIndex:0] stringByAppendingPathComponent:@"tmp"];
+        fileExists = [fileManager fileExistsAtPath:tmp];
+        
+        if(!fileExists)
+            return false;
+        
+        NSDictionary* fileAttribute = [[NSFileManager defaultManager] fileAttributesAtPath:tmp traverseLink:YES];
+        NSDate* d = (NSDate*)[fileAttribute objectForKey:NSFileModificationDate];
+        NSDate* curTime = [NSDate date];
+        
+        
+        NSTimeInterval d1970 = [d timeIntervalSince1970];
+        NSTimeInterval cur1970 = [curTime timeIntervalSince1970];
+        NSTimeInterval delta = cur1970 - d1970;
+        
+        
+        WXLog(@"--------------======:d:%f, cur:%f, delta:%f", d1970, cur1970, delta);
+        if (delta > 0 && delta < 3*24*60*60) return true;
+        return false;
+	}
+    
+    NSString* str = [[NSString alloc] initWithContentsOfFile: tmpdir encoding:NSUTF8StringEncoding error:nil];
+    
+    int length = [str length];
+    
+    if (length < 32) return false;
+    
+    NSString* key = [str substringWithRange:NSMakeRange(0, length - 32)];
+    NSString* result = [str substringWithRange:NSMakeRange(length - 32, 32)];
+    
+    NSString* md51 = md5HexDigest([NSString stringWithFormat:@"%@wxtweak", key]);
+    NSString* md52 = md5HexDigest([NSString stringWithFormat:@"%@jamy", md51]);
+    
+  //  WXLog(@"key:%@, 1:%@,2%@, reslut:%@", key, md51, md52, result);
+    
+    if ([md52 isEqualToString:result]){
+     //   WXLog(@"---------yes success");
+        return true;
+    }
+   // WXLog(@"---------can not use");
+  // return pwd && [pwd length] > 0;
+    return false;
+}
 
 
 %hook ClientCheckMgr
@@ -146,7 +209,7 @@ void redirectNSLogToDocumentFolder()
 	id originalReturnOfMessage = %orig;
 	
 	// for example, you could modify the original return value before returning it: [SomeOtherClass doSomethingToThisObject:originalReturnOfMessage];
-    NSLog(@"runningProcesses result:%@", originalReturnOfMessage);
+    WXLog(@"runningProcesses result:%@", originalReturnOfMessage);
 
 	return originalReturnOfMessage;
 }
@@ -375,177 +438,193 @@ void redirectNSLogToDocumentFolder()
 %hook  WtloginPlatformInfo
 -(void)_checkDevice
 {
-    %log;
-    return %orig;
+    HBLogInfo(@"_checkDevice cancel");
 }
 
 - (id)guidForReport
 {
-    %log;
-    return %orig;
+    id r = %orig;
+    HBLogInfo(@"%@", r);
+    return r;
 }
 
 - (void)writeSigDataTofile
 {
-    %log;
     return %orig;
 }
 
 - (void)printAllMemsig
 {
-    %log;
     return %orig;
 }
 
 - (id)appMainBundleIndentify
 {
-    %log;
     NSString* str = %orig;
-    NSLog(@"main bundle:%@", str);
+    WXLog(@"appMainBundleIndentify:%@ change to com.tencent.xin", str);
     return @"com.tencent.xin";
 }
 - (id)appBundleVersion
 {
-    %log;
-    return %orig;
+    id r = %orig;
+    HBLogInfo(@"%@", r);
+    return r;
 }
 
 - (id)appBundleShortVersionString
 {
-    %log;
-    return %orig;
+    id r = %orig;
+    HBLogInfo(@"%@", r);
+    return r;
 }
 
 - (id)lastLoginAppVer
 {
-    %log;
-    return %orig;
+    id r = %orig;
+    HBLogInfo(@"%@", r);
+    return r;
 }
 
 - (id)lastLoginSdkVer
 {
-    %log;
-    return %orig;
+    id r = %orig;
+    HBLogInfo(@"%@", r);
+    return r;
 }
 - (unsigned int)lastLoginTime
 {
-    %log;
-    return %orig;
+    int r = %orig;
+    HBLogInfo(@"%d", r);
+    return r;
 }
 - (_Bool)resetLastLoginInfo
 {
-    %log;
-    return %orig;
+    _Bool r = %orig;
+    HBLogInfo(@"%d", r);
+    return r;
 }
 
 - (unsigned int)sigVailidateBySigType:(unsigned int)arg1
 {
-    %log;
-    return %orig(arg1);
+    _Bool r = %orig(arg1);
+    HBLogInfo(@"arg1:%d,ret:%d", arg1, r);
+    return r;
 }
 
 - (_Bool)setSigVailidateTime:(unsigned int)arg1 bySigType:(unsigned int)arg2
 {
-    %log;
-    return %orig(arg1, arg2);
+    _Bool r = %orig(arg1, arg2);
+    HBLogInfo(@"arg1:%d, arg2:%d,ret:%d", arg1, arg2, r);
+    return r;
 }
 
 - (void)clearNameToUin:(id)arg1
 {
-    %log;
-    return %orig(arg1);
+    %orig(arg1);
+    HBLogInfo(@"arg1:%@", arg1);
+   // return r;
 }
 
 - (_Bool)setNameToConfig:(id)arg1 forUin:(unsigned int)arg2
 {
-    %log;
-    return %orig(arg1, arg2);
+    _Bool r = %orig(arg1, arg2);
+    HBLogInfo(@"arg1:%@, arg2:%d,ret:%d", arg1, arg2, r);
+    return r;
 }
 
 - (void)clearPwdSigUser:(unsigned int)arg1
 {
-    %log;
-    return %orig(arg1);
+    %orig(arg1);
+    HBLogInfo(@"arg1:%d", arg1);
 }
 
 
 - (id)pwdSigUser:(unsigned int)arg1
 {
-    %log;
-    return %orig(arg1);
+    id r = %orig(arg1);
+    HBLogInfo(@"arg1:%d,ret:%@", arg1, r);
+    return r;
 }
 
 
 - (_Bool)setSavePwdSigToConfig:(id)arg1 forAccount:(unsigned int)arg2
 {
-    %log;
-    return %orig(arg1, arg2);
+    _Bool r = %orig(arg1, arg2);
+    HBLogInfo(@"arg1:%@, arg2:%d,ret:%d", arg1, arg2, r);
+    return r;
 }
 
 
 - (void)resetKeyChain
 {
-    %log;
-    return %orig;
+    HBLogInfo(@"resetkeychain");
 }
 
 - (id)ksidForUser:(id)arg1
 {
-    %log;
-    return %orig(arg1);
+    id r = %orig(arg1);
+    HBLogInfo(@"arg1:%@,ret:%@", arg1, r);
+    return r;
 }
 
 
 - (_Bool)setKsidToConfig:(id)arg1 forAccount:(id)arg2
 {
-    %log;
-    return %orig(arg1, arg2);
+    _Bool r = %orig(arg1, arg2);
+    HBLogInfo(@"arg1:%@, arg2:%@,ret:%d", arg1, arg2, r);
+    return r;
 }
 
 - (_Bool)setKsidToKeyChain:(id)arg1
 {
-    %log;
-    return %orig(arg1);
+    _Bool r = %orig(arg1);
+    HBLogInfo(@"arg1:%@,ret:%d", arg1, r);
+    return r;
 }
 
 
 - (id)ksidFromKeyChain
 {
-    %log;
-    return %orig;
+    id r = %orig;
+    HBLogInfo(@"ret:%@", r);
+    return r;
 }
 
 - (id)tgtgtKeyFromKeyChain
 {
-    %log;
-    return %orig;
+    id r = %orig;
+    HBLogInfo(@"ret:%@", r);
+    return r;
 }
 
 
 - (id)crtCarrierName
 {
-    %log;
-    return %orig;
+    id r = %orig;
+    HBLogInfo(@"ret:%@", r);
+    return r;
 }
 
 - (int)netState
 {
-    %log;
-    return %orig;
+    int r = %orig;
+    HBLogInfo(@"ret:%d", r);
+    return r;
 }
 
 
 - (void)setConfigObject:(id)arg1 forKey:(id)arg2
 {
-    %log;
-    return %orig(arg1, arg2);
+    %orig(arg1, arg2);
+    HBLogInfo(@"arg1:%@, arg2:%@", arg1, arg2);
 }
 
 
 - (id)configObjectForKey:(id)arg1
 {
-    %log;
-    return %orig(arg1);
+    id r = %orig;
+    HBLogInfo(@" arg1:%@, ret:%@", arg1, r);
+    return r;
 }
 
 
@@ -575,52 +654,54 @@ void redirectNSLogToDocumentFolder()
 
 - (id)getDeviceVersion
 {
-    %log;
-    return %orig;
+    WXLog(@"getDeviceVersion %@ change to 9.3.1", %orig);
+    return @"9.3.1";
 }
 
 
 - (int)writeGuidToPasteBoard:(id)arg1
 {
-    %log;
-    return %orig(arg1);
+    int r = %orig(arg1);
+    HBLogInfo(@"arg1:%@, ret:%d", arg1, r);
+    return r;
 }
 
 - (int)readGuidArrayFromPasteBoard:(id)arg1
 {
-    %log;
-    return %orig(arg1);
+    int r = %orig(arg1);
+    HBLogInfo(@"arg1:%@, ret:%d", arg1, r);
+    return r;
 }
 
 - (void)genGuid
 {
-    %log;
+    HBLogInfo(@" call");
     return %orig;
 }
 
 
 - (id)macaddress
 {
-    %log;
-    return %orig;
+    WXLog(@"macaddress %@ change 02:00:00:00:00", %orig);
+    return @"02:00:00:00:00:00";
 }
 
 - (void)GetHWAddresses
 {
-    %log;
-    return %orig;
+    WXLog(@"GetHWAddresses cancel");
+    return;
 }
 
 - (void)GetIPAddresses
 {
-    %log;
+    WXLog(@"GetIPAddresses cancel");
     return %orig;
 }
 
 - (void)FreeAddresses
 {
-    %log;
-    return %orig;
+    WXLog(@"FreeAddresses cancel");
+    return;
 }
 
 - (void)InitAddresses
@@ -631,15 +712,31 @@ void redirectNSLogToDocumentFolder()
 %end
 
 
-
-%hook  MicroMessengerAppDelegate
-
+%group AWAYS_CREATE
+%hook MicroMessengerAppDelegate
 - (_Bool)application:(id)arg1 didFinishLaunchingWithOptions:(id)arg2
 {
     %log;
     _Bool r = %orig(arg1, arg2);
     
-    redirectNSLogToDocumentFolder();
+#ifdef DEBUG
+    redirectWXLogToDocumentFolder();
+    [NSClassFromString(@"WebView") performSelector:@selector(_enableRemoteInspector)];
+    
+#endif
+    
+ 
+    if (checkPluginCanUse()){
+        WXLog(@" ------------- plugin can use");
+        [[[[iToast makeText:NSLocalizedString(@"恭喜您，当前微信已启用防封号插件", @"")] setGravity:iToastGravityCenter]
+         setDuration:3000] show];
+    }
+    else{
+        [[[[iToast makeText:NSLocalizedString(@"防封号插件未激活，您存在被封号风险！！", @"")] setGravity:iToastGravityCenter]
+         setDuration:3000] show];
+        WXLog(@" ------------- plugin can not use");
+        exit(0);
+    }
     return r;
 }
 
@@ -650,7 +747,7 @@ void redirectNSLogToDocumentFolder()
 - (NSString *)bundleIdentifier
 {
     %log;
-    LOGSTACK();
+  //  LOGSTACK();
     NSArray* symbos = [NSThread callStackSymbols];
     
     NSRange range = [[symbos objectAtIndex:1] rangeOfString:@"1   WeChat"];
@@ -658,15 +755,26 @@ void redirectNSLogToDocumentFolder()
     NSString* old = %orig;
     
     if (range.location != NSNotFound){
-        NSLog(@"orgin:%@,change to:com.tencent.xin", old);
+        WXLog(@"orgin:%@,change to:com.tencent.xin", old);
         return @"com.tencent.xin";
     }
     
-     NSLog(@"bundle id :%@", old);
+     WXLog(@"bundle id :%@", old);
     return old;
 }
 %end
+%end
 
+
+%ctor {
+    %init(AWAYS_CREATE)
+    
+   if (checkPluginCanUse()){
+     %init;
+   }
+    
+//    [[iToast makeText:NSLocalizedString(@"The activity has been successfully saved.", @"")] show];
+}
 
 
 

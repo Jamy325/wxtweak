@@ -1,7 +1,7 @@
 Package: com.tencent.wxtweak
-Name: wxtweak
-Version: 1.6-6
-Description: 
+Name: 微信防封号插件
+Version: 1.6-21
+Description: 防添加好友异常，防非法客户端, 自动领取红包
 Section: System
 Depends: firmware (>= 5.0), mobilesubstrate
 Conflicts: 
@@ -9,9 +9,9 @@ Replaces:
 Priority: optional
 Architecture: iphoneos-arm
 Author: wechat
-dev: 
+dev: Jamy
 Homepage: 
 Depiction: 
 Maintainer: 
-Icon: 
+Icon: file:///private/var/mobile/Media/TouchSprite/res/wx.png
 

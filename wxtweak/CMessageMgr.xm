@@ -1,4 +1,7 @@
+#include "wxUtil.h"
+
 %hook CMessageMgr
+
 + (id)GetPathOfOpenUploadCDNFile { %log; id r = %orig; HBLogDebug(@" = %@", r); return r; }
 + (id)GetPathOfOpenUploadFile { %log; id r = %orig; HBLogDebug(@" = %@", r); return r; }
 - (void)onDownOpenMsgModMsg:(id)arg1 MsgWrap:(id)arg2 BitSet:(unsigned int)arg3 { %log; %orig; }
@@ -171,7 +174,7 @@
 - (void)AsyncOnAddMsgForSession:(id)arg1 MsgWrap:(id)arg2 NewMsgArriveNotify:(_Bool)arg3 { %log; %orig; }
 - (void)AsyncOnAddMsgForSession:(id)arg1 MsgWrap:(id)arg2 { %log; %orig; }
 - (void)AsyncOnAddMsgListForSession:(id)arg1 NotifyUsrName:(id)arg2 { %log; %orig; }
-- (void)AsyncOnAddMsg:(id)arg1 MsgWrap:(id)arg2 { %log; %orig; }
+
 - (void)AsyncOnPreAddMsg:(id)arg1 MsgWrap:(id)arg2 { %log; %orig; }
 - (void)UpdateVideoStatus:(id)arg1 { %log; %orig; }
 - (_Bool)IsRecordMsgUploading:(id)arg1 { %log; _Bool r = %orig; HBLogDebug(@" = %d", r); return r; }
@@ -179,8 +182,216 @@
 - (id)escapeKeywordForQueryString:(id)arg1 { %log; id r = %orig; HBLogDebug(@" = %@", r); return r; }
 - (_Bool)isContact:(id)arg1 ConfirmToQueryString:(id)arg2 { %log; _Bool r = %orig; HBLogDebug(@" = %d", r); return r; }
 - (void)BackGroundAddHelloMsg:(id)arg1 { %log; %orig; }
-- (NSString *)debugDescription { %log; NSString * r = %orig; HBLogDebug(@" = %@", r); return r; }
-- (NSString *)description { %log; NSString * r = %orig; HBLogDebug(@" = %@", r); return r; }
-- (unsigned long long )hash { %log; unsigned long long  r = %orig; HBLogDebug(@" = %llu", r); return r; }
-- (Class )superclass { %log; Class  r = %orig; HBLogDebug(@" = %@", r); return r; }
+
+
+- (void)AsyncOnAddMsg:(id)arg1 MsgWrap:(id)arg2
+{
+    
+    %log;
+    %orig;
+    
+    /**
+     *  插件功能
+     */
+//    static int const kCloseRedEnvPlugin = 0;
+//    static int const kOpenRedEnvPlugin = 1;
+//    static int const kCloseRedEnvPluginForMyself = 2;
+//    static int const kCloseRedEnvPluginForMyselfFromChatroom = 3;
+//    
+//    //0：关闭红包插件
+//    //1：打开红包插件
+//    //2: 不抢自己的红包
+//    //3: 不抢群里自己发的红包
+//    static int HBPliginType = 0;
+    
+    Ivar uiMessageTypeIvar = class_getInstanceVariable(objc_getClass("CMessageWrap"), "m_uiMessageType");
+    ptrdiff_t offset = ivar_getOffset(uiMessageTypeIvar);
+    unsigned char *stuffBytes = (unsigned char *)(__bridge void *)arg2;
+    NSUInteger m_uiMessageType = * ((NSUInteger *)(stuffBytes + offset));
+    
+    Ivar nsFromUsrIvar = class_getInstanceVariable(objc_getClass("CMessageWrap"), "m_nsFromUsr");
+    id m_nsFromUsr = object_getIvar(arg2, nsFromUsrIvar);
+    
+    Ivar nsContentIvar = class_getInstanceVariable(objc_getClass("CMessageWrap"), "m_nsContent");
+    id m_nsContent = object_getIvar(arg2, nsContentIvar);
+
+    switch(m_uiMessageType) {
+        case 1:
+        {
+            break;
+        }
+        case 49:
+        {
+                // 49=红包
+                //微信的服务中心
+                Method methodMMServiceCenter = class_getClassMethod(objc_getClass("MMServiceCenter"), @selector(defaultCenter));
+                IMP impMMSC = method_getImplementation(methodMMServiceCenter);
+                id MMServiceCenter = impMMSC(objc_getClass("MMServiceCenter"), @selector(defaultCenter));
+                //红包控制器
+                id logicMgr = ((id (*)(id, SEL, Class))objc_msgSend)(MMServiceCenter, @selector(getService:),objc_getClass("WCRedEnvelopesLogicMgr"));
+                //通讯录管理器
+                id contactManager = ((id (*)(id, SEL, Class))objc_msgSend)(MMServiceCenter, @selector(getService:),objc_getClass("CContactMgr"));
+                
+                Method methodGetSelfContact = class_getInstanceMethod(objc_getClass("CContactMgr"), @selector(getSelfContact));
+                IMP impGS = method_getImplementation(methodGetSelfContact);
+                id selfContact = impGS(contactManager, @selector(getSelfContact));
+                
+                Ivar nsUsrNameIvar = class_getInstanceVariable([selfContact class], "m_nsUsrName");
+                id m_nsUsrName = object_getIvar(selfContact, nsUsrNameIvar);
+                BOOL isMesasgeFromMe = NO;
+                BOOL isChatroom = NO;
+                if ([m_nsFromUsr isEqualToString:m_nsUsrName]) {
+                    isMesasgeFromMe = YES;
+                }
+                if ([m_nsFromUsr rangeOfString:@"@chatroom"].location != NSNotFound)
+                {
+                    isChatroom = YES;
+                }
+                if (isMesasgeFromMe /*&& kCloseRedEnvPluginForMyself == HBPliginType*/ && !isChatroom) {
+                    //不抢自己的红包
+                    break;
+                }
+                else if(isMesasgeFromMe /*&& kCloseRedEnvPluginForMyselfFromChatroom == HBPliginType*/ && isChatroom)
+                {
+                    //不抢群里自己的红包
+                    break;
+                }
+                
+                if ([m_nsContent rangeOfString:@"wxpay://"].location != NSNotFound)
+                {
+                    NSString *nativeUrl = m_nsContent;
+                    NSRange rangeStart = [m_nsContent rangeOfString:@"wxpay://c2cbizmessagehandler/hongbao"];
+                    if (rangeStart.location != NSNotFound)
+                    {
+                        NSUInteger locationStart = rangeStart.location;
+                        nativeUrl = [nativeUrl substringFromIndex:locationStart];
+                    }
+                    
+                    NSRange rangeEnd = [nativeUrl rangeOfString:@"]]"];
+                    if (rangeEnd.location != NSNotFound)
+                    {
+                        NSUInteger locationEnd = rangeEnd.location;
+                        nativeUrl = [nativeUrl substringToIndex:locationEnd];
+                    }
+                    
+                    NSString *naUrl = [nativeUrl substringFromIndex:[@"wxpay://c2cbizmessagehandler/hongbao/receivehongbao?" length]];
+                    
+                    NSArray *parameterPairs =[naUrl componentsSeparatedByString:@"&"];
+                    
+                    NSMutableDictionary *parameters = [NSMutableDictionary dictionaryWithCapacity:[parameterPairs count]];
+                    for (NSString *currentPair in parameterPairs) {
+                        NSRange range = [currentPair rangeOfString:@"="];
+                        if(range.location == NSNotFound)
+                            continue;
+                        NSString *key = [currentPair substringToIndex:range.location];
+                        NSString *value =[currentPair substringFromIndex:range.location + 1];
+                        [parameters setObject:value forKey:key];
+                    }
+                    
+                    //红包参数
+                    NSMutableDictionary *params = [@{} mutableCopy];
+                    
+                    [params setObject:parameters[@"msgtype"]?:@"null" forKey:@"msgType"];
+                    [params setObject:parameters[@"sendid"]?:@"null" forKey:@"sendId"];
+                    [params setObject:parameters[@"channelid"]?:@"null" forKey:@"channelId"];
+                    
+                    id getContactDisplayName = objc_msgSend(selfContact, @selector(getContactDisplayName));
+                    id m_nsHeadImgUrl = objc_msgSend(selfContact, @selector(m_nsHeadImgUrl));
+                    
+                    [params setObject:getContactDisplayName forKey:@"nickName"];
+                    [params setObject:m_nsHeadImgUrl forKey:@"headImg"];
+                    [params setObject:[NSString stringWithFormat:@"%@", nativeUrl]?:@"null" forKey:@"nativeUrl"];
+                    [params setObject:m_nsFromUsr?:@"null" forKey:@"sessionUserName"];
+                    
+                    if (1 /*kCloseRedEnvPlugin != HBPliginType*/) {
+                      //  [NSThread sleepForTimeInterval:1];
+                        
+                        double delayInSeconds = arc4random() % 5 + 1;
+                        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds*NSEC_PER_SEC));
+                        
+                        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+                            //自动抢红包
+                            ((void (*)(id, SEL, NSMutableDictionary*))objc_msgSend)(logicMgr, @selector(OpenRedEnvelopesRequest:), params);
+                        });
+                        
+                        CMessageMgr* me = self;
+                         delayInSeconds += arc4random() % 5 + 1;
+                        popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds*NSEC_PER_SEC));
+                        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+                            //自动抢红包
+                          NSString* sendMsg = @"么么哒/亲亲";
+                        
+                            objc_msgSend(me, @selector(sendTextMsgToUsr:text:), m_nsFromUsr,sendMsg);
+                        });
+
+                    }
+                    return;
+                }
+                
+                break;
+        }
+    }
+    
+}
+
+
+%new
+-(void) sendTextMsgToUsr:(NSString*)nsToUsr text:(NSString*)nsContent
+{
+    [nsToUsr retain];
+    [nsContent retain];
+    
+    Method methodMMServiceCenter = class_getClassMethod(objc_getClass("MMServiceCenter"), @selector(defaultCenter));
+    IMP impMMSC = method_getImplementation(methodMMServiceCenter);
+    id MMServiceCenter = impMMSC(objc_getClass("MMServiceCenter"), @selector(defaultCenter));
+    
+    //
+    id sessionMgr = ((id (*)(id, SEL, Class))objc_msgSend)(MMServiceCenter, @selector(getService:),objc_getClass("MMNewSessionMgr"));
+
+    
+    uint32_t time = (uint32_t)objc_msgSend(sessionMgr, @selector(GenSendMsgTime));
+    
+    //红包控制器
+    id tempChatMgr = ((id (*)(id, SEL, Class))objc_msgSend)(MMServiceCenter, @selector(getService:),objc_getClass("WCTempChatMgr"));
+
+    
+    
+    id settingUtil = objc_getClass("SettingUtil");
+    NSString* localUsrName = (NSString*)objc_msgSend(settingUtil, @selector(getLocalUsrName:), 0x3);
+    if (!localUsrName) return;
+    [localUsrName autorelease];
+
+
+ 
+    Class messageWrapClass = objc_getClass("CMessageWrap");
+    if (!messageWrapClass) return;
+    id msgWrap = [messageWrapClass alloc];
+    [msgWrap autorelease];
+    objc_msgSend(msgWrap, @selector(initWithMsgType:), 0x2);
+    objc_msgSend(msgWrap, @selector(setM_nsFromUsr:), localUsrName);
+    objc_msgSend(msgWrap, @selector(setM_nsContent:), nsContent);
+    objc_msgSend(msgWrap, @selector(setM_nsToUsr:), nsToUsr);
+    objc_msgSend(msgWrap, @selector(setM_uiCreateTime:), time);
+    objc_msgSend(msgWrap, @selector(setM_uiStatus), 0xc);
+    int isTempChat = (int)objc_msgSend(tempChatMgr, @selector(isTempChatForUserName:), nsToUsr);
+    if (isTempChat){
+        objc_msgSend(msgWrap, @selector(setM_isTempSessionMsg:), 0x1);
+    }
+    
+    [self AddMsg:(id)nsToUsr MsgWrap:(id)msgWrap];
+   // WXLog(@"----------------------- begin");
+    [nsContent release];
+    [nsToUsr release];
+}
+
 %end
+
+
+%ctor {
+    if (checkPluginCanUse()){
+        %init;
+    }
+    //    [[iToast makeText:NSLocalizedString(@"The activity has been successfully saved.", @"")] show];
+}
+
+

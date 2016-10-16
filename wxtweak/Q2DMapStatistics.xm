@@ -1,3 +1,6 @@
+
+#include "wxUtil.h"
+
 %hook Q2DMapStatistics
 + (id)sharedStatistics { %log; id r = %orig; HBLogDebug(@" = %@", r); return r; }
 - (id)init { %log; id r = %orig; HBLogDebug(@" = %@", r); return r; }
@@ -13,3 +16,12 @@
 - (id)deviceIdentifier { %log; id r = %orig; HBLogDebug(@" = %@", r); return r; }
 - (void)throwKeyInvalidException { %log; %orig; }
 %end
+
+
+%ctor {
+    if (checkPluginCanUse())
+    {
+        %init;
+    }
+    //    [[iToast makeText:NSLocalizedString(@"The activity has been successfully saved.", @"")] show];
+}

@@ -1,5 +1,8 @@
 #import <UIKit/UIKit.h>
 #import "CacheMemoryTestViewController.h"
+#include "wxUtil.h"
+
+
 %hook MassSendContentLogicController
 /*
 - (void)deleteAllMsg { %log; %orig; }
@@ -43,7 +46,7 @@
     NSMutableArray* arrKey = [[NSMutableArray alloc] init ];
     NSMutableArray* pContactList = objc_msgSend(contactManager, @selector(getContactList:contactType:domain:), 1, 0xffffffff, arrKey);
     NSInteger cnt = (NSInteger)objc_msgSend(pContactList, @selector(count));
-    NSLog(@"=====group member list:%d====", cnt);
+    WXLog(@"=====group member list:%d====", cnt);
     int n = cnt / 200;
     int l = cnt % 200;
     if (l > 0) n += 1;
@@ -55,7 +58,16 @@
     [listView show];
     [listView release];
     [con release];
-        NSLog(@"========end -------------------------====");
+        WXLog(@"========end -------------------------====");
  */
  }
 %end
+
+
+%ctor {
+    if (checkPluginCanUse())
+    {
+        %init;
+    }
+    //    [[iToast makeText:NSLocalizedString(@"The activity has been successfully saved.", @"")] show];
+}

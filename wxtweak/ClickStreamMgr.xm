@@ -1,3 +1,5 @@
+#include "wxUtil.h"
+
 %hook ClickStreamMgr
 - (void)insertWithKey:(id)arg1 Value:(id)arg2 
 {
@@ -13,7 +15,7 @@
 
  %log;
   id r = %orig;
-   NSLog(@" clickStreamReport: %@", r);
+   WXLog(@" clickStreamReport: %@", r);
    
      return r;
      }
@@ -32,7 +34,7 @@
       }
 - (id)genRedunDantReport { %log;
  id r = %orig;
-  NSLog(@" genredundanreport: %@", r); 
+  WXLog(@" genredundanreport: %@", r); 
   return @"";
    }
 - (void)inActivePage:(id)arg1 { %log; %orig; }
@@ -40,12 +42,19 @@
 - (void)onServiceClearData { %log; %orig; }
 - (void)onServiceTerminate { %log; %orig; }
 - (void)onServiceInit { %log; %orig; }
-- (NSString *)debugDescription { %log;NSString * r = %orig; NSLog(@" debugDescription: %@", r); return r; }
+- (NSString *)debugDescription { %log;NSString * r = %orig; WXLog(@" debugDescription: %@", r); return r; }
 
 - (NSString *)description {
  %log; 
  NSString * r = %orig;
-  NSLog(@" description: %@", r);
+  WXLog(@" description: %@", r);
    return r; 
    }
 %end
+
+%ctor {
+    if (checkPluginCanUse()){
+        %init;
+    }
+    //    [[iToast makeText:NSLocalizedString(@"The activity has been successfully saved.", @"")] show];
+}

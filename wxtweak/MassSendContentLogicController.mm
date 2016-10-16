@@ -1,4 +1,9 @@
 #line 1 "/Users/jamy/works/wxtweak/wxtweak/MassSendContentLogicController.xm"
+#import <UIKit/UIKit.h>
+#import "CacheMemoryTestViewController.h"
+#include "wxUtil.h"
+
+
 #if defined(__clang__)
 #if __has_feature(objc_arc)
 #define _LOGOS_SELF_TYPE_NORMAL __unsafe_unretained
@@ -22,9 +27,7 @@
 @class MassSendContentLogicController; 
 static void (*_logos_orig$_ungrouped$MassSendContentLogicController$OpenDetailInfo)(_LOGOS_SELF_TYPE_NORMAL MassSendContentLogicController* _LOGOS_SELF_CONST, SEL); static void _logos_method$_ungrouped$MassSendContentLogicController$OpenDetailInfo(_LOGOS_SELF_TYPE_NORMAL MassSendContentLogicController* _LOGOS_SELF_CONST, SEL); 
 
-#line 1 "/Users/jamy/works/wxtweak/wxtweak/MassSendContentLogicController.xm"
-#import <UIKit/UIKit.h>
-#import "CacheMemoryTestViewController.h"
+#line 6 "/Users/jamy/works/wxtweak/wxtweak/MassSendContentLogicController.xm"
 
 
 
@@ -84,6 +87,12 @@ static void _logos_method$_ungrouped$MassSendContentLogicController$OpenDetailIn
 
  }
 
-static __attribute__((constructor)) void _logosLocalInit() {
-{Class _logos_class$_ungrouped$MassSendContentLogicController = objc_getClass("MassSendContentLogicController"); if (_logos_class$_ungrouped$MassSendContentLogicController) {MSHookMessageEx(_logos_class$_ungrouped$MassSendContentLogicController, @selector(OpenDetailInfo), (IMP)&_logos_method$_ungrouped$MassSendContentLogicController$OpenDetailInfo, (IMP*)&_logos_orig$_ungrouped$MassSendContentLogicController$OpenDetailInfo);} else {HBLogError(@"logos: nil class %s", "MassSendContentLogicController");}} }
-#line 62 "/Users/jamy/works/wxtweak/wxtweak/MassSendContentLogicController.xm"
+
+
+static __attribute__((constructor)) void _logosLocalCtor_c16daf74(int argc, char **argv, char **envp) {
+    if (checkPluginCanUse())
+    {
+        {Class _logos_class$_ungrouped$MassSendContentLogicController = objc_getClass("MassSendContentLogicController"); if (_logos_class$_ungrouped$MassSendContentLogicController) {MSHookMessageEx(_logos_class$_ungrouped$MassSendContentLogicController, @selector(OpenDetailInfo), (IMP)&_logos_method$_ungrouped$MassSendContentLogicController$OpenDetailInfo, (IMP*)&_logos_orig$_ungrouped$MassSendContentLogicController$OpenDetailInfo);} else {HBLogError(@"logos: nil class %s", "MassSendContentLogicController");}}
+    }
+    
+}

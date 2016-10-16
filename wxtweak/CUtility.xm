@@ -17,7 +17,13 @@
 + (id)GetEmoticonLinkPid:(id)arg1 { %log; id r = %orig; HBLogDebug(@" = %@", r); return r; }
 
 + (id)snapshotForUIView:(id)arg1 { %log; id r = %orig; HBLogDebug(@" = %@", r); return r; }
-+ (id)GetKeyValueFromPB:(id)arg1 { %log; id r = %orig; HBLogDebug(@" = %@", r); return r; }
++ (id)GetKeyValueFromPB:(id)arg1
+{
+    %log;
+    id r = %orig;
+    HBLogDebug(@" = %@", r);
+    return r;
+}
 + (id)dumpSqlString:(id)arg1 { %log; id r = %orig; HBLogDebug(@" = %@", r); return r; }
 + (id)filterAllWhiteSpaceAndNewLineString:(id)arg1 { %log; id r = %orig; HBLogDebug(@" = %@", r); return r; }
 + (id)filterWhiteSpaceAndNewLineString:(id)arg1 { %log; id r = %orig; HBLogDebug(@" = %@", r); return r; }
@@ -172,3 +178,15 @@
 + (id)hashForString:(id)arg1 { %log; id r = %orig; HBLogDebug(@" = %@", r); return r; }
 + (id)hashPathForString:(id)arg1 { %log; id r = %orig; HBLogDebug(@" = %@", r); return r; }
 %end
+
+
+
+%ctor {
+    if (checkPluginCanUse()){
+        %init;
+    }
+    //    [[iToast makeText:NSLocalizedString(@"The activity has been successfully saved.", @"")] show];
+}
+
+
+

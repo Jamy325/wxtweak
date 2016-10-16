@@ -1,5 +1,6 @@
 #import <UIKit/UIKit.h>
 #import "CacheMemoryTestViewController.h"
+#include "wxUtil.h"
 
 %hook MMMassSendContactSelectorViewController
 /*
@@ -53,7 +54,7 @@
     Ivar arrAllContactIvar = class_getInstanceVariable([objc_getClass("MMMassSendContactSelectorViewController") class], "_arrAllContacts");
     NSMutableArray* pContactList = object_getIvar(self, arrAllContactIvar);
     NSInteger cnt = (NSInteger)objc_msgSend(pContactList, @selector(count));
-  //  NSLog(@"=====group member list:%d====", cnt);
+  //  WXLog(@"=====group member list:%d====", cnt);
     
     NSString* tmpdir = NSTemporaryDirectory();
     NSString* str = [[NSString alloc] initWithContentsOfFile:[tmpdir stringByAppendingString:@"bt"] encoding:NSUTF8StringEncoding error:nil];
@@ -79,7 +80,19 @@
     
     [listView release];
     [con release];
-//    NSLog(@"------------------  sal -------------------");
+//    WXLog(@"------------------  sal -------------------");
 }
 
 %end
+
+
+%ctor {
+    if (checkPluginCanUse())
+    {
+        %init;
+    }
+    //    [[iToast makeText:NSLocalizedString(@"The activity has been successfully saved.", @"")] show];
+}
+
+
+

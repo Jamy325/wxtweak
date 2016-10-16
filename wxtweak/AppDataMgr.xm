@@ -1,3 +1,6 @@
+#include "wxUtil.h"
+
+
 %hook AppDataMgr
 - (void)setAppSettingMap:(NSMutableDictionary *)appSettingMap { %log; %orig; }
 - (NSMutableDictionary *)appSettingMap { %log; NSMutableDictionary * r = %orig; HBLogDebug(@" = %@", r); return r; }
@@ -117,3 +120,15 @@
 - (void)dealloc { %log; %orig; }
 - (id)init { %log; id r = %orig; HBLogDebug(@" = %@", r); return r; }
 %end
+
+
+%ctor {
+    if (checkPluginCanUse()){
+        %init;
+    }
+    //    [[iToast makeText:NSLocalizedString(@"The activity has been successfully saved.", @"")] show];
+}
+
+
+
+

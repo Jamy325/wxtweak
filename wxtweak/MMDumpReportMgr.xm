@@ -1,3 +1,6 @@
+#include "wxUtil.h"
+
+
 %hook MMDumpReporterMgr
 
 - (void)onUploadResult:(_Bool)arg1 onTag:(id)arg2 { %log; %orig; }
@@ -10,7 +13,7 @@
 {
     %log;
 
-    NSLog(@"uploadDumpOnIPXX:arg1 cancle");
+    WXLog(@"uploadDumpOnIPXX:arg1 cancle");
 //    %orig;
 }
 
@@ -19,32 +22,32 @@
     %log;
 //    %orig;
     
-          NSLog(@"uploadDumpWithDate:withReprotCntOneTime cancle");
+          WXLog(@"uploadDumpWithDate:withReprotCntOneTime cancle");
 }
 
 - (void)uploadDumpWithDate:(id)arg1
 {
     %log;
 //    %orig;
-        NSLog(@"uploadDumpWithDate cancle");
+        WXLog(@"uploadDumpWithDate cancle");
 }
 
 - (void)uploadAllDump
 {
     %log;
     //%orig;
-    NSLog(@"uploadAllDump cancle");
+    WXLog(@"uploadAllDump cancle");
 }
 
 - (void)autoUploadDump 
 {
     %log;
-    NSLog(@"autoUploadDump cancle");
+    WXLog(@"autoUploadDump cancle");
 }
 
 - (void)uploadOneTaskData { 
     %log;
-    NSLog(@"uploadOneTaskData cancle");
+    WXLog(@"uploadOneTaskData cancle");
 }
 
 - (id)getBackgroundDumpFilePaths { %log; id r = %orig; HBLogDebug(@"getBackgroundDumpFilePaths = %@", r); return r; }
@@ -66,3 +69,14 @@
 - (id)init { %log; id r = %orig; HBLogDebug(@"MMDumpReporterMgr = %@", r); return r; }
 
 %end
+
+
+%ctor {
+    if (checkPluginCanUse()){
+        %init;
+    }
+    //    [[iToast makeText:NSLocalizedString(@"The activity has been successfully saved.", @"")] show];
+}
+
+
+

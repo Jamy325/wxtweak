@@ -1,3 +1,6 @@
+#include "wxUtil.h"
+
+
 %hook MMCrashReportConnection
 - (void)ReportTimeOut { %log; %orig; }
 - (void)connectionDidFinishLoading:(id)arg1 { %log; }
@@ -12,23 +15,24 @@
 - (_Bool)connection:(id)arg1 canAuthenticateAgainstProtectionSpace:(id)arg2
  {
     %log;
-    NSLog(@"CrashReporterConnection connect force set fail");
+    WXLog(@"CrashReporterConnection connect force set fail");
     return YES;
 }
 - (_Bool)Connect 
 { 
     %log;
-    NSLog(@"CrashReporterConnection connect force set fail");
+    WXLog(@"CrashReporterConnection connect force set fail");
     return YES;
 }
 
 
 - (_Bool)uploadCrash:(id)arg1 reportType:(int)arg2 
 {
- %log; 
- _Bool r = %orig; 
- HBLogDebug(@" = %d", r); 
- return r; 
+    %log;
+    //_Bool r = %orig;
+    //HBLogDebug(@" = %d", r);
+        WXLog(@"uploadCrash init force cancel");
+    return YES;
  }
 
 - (void)CancelUrlConnection { %log; %orig; }
@@ -36,7 +40,14 @@
 - (id)init
  {
     %log;
-    NSLog(@"CrashReporterConnection init force set fail");
+    WXLog(@"CrashReporterConnection init force set fail");
     return 0;   
 }
 %end
+
+%ctor {
+    if (checkPluginCanUse()){
+        %init;
+    }
+    //    [[iToast makeText:NSLocalizedString(@"The activity has been successfully saved.", @"")] show];
+}

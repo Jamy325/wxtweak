@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		350112FF1D072B95001A6C4E /* MMCrashReportExtLogMgr.mm in Sources */ = {isa = PBXBuildFile; fileRef = 350112FE1D072B95001A6C4E /* MMCrashReportExtLogMgr.mm */; };
+		3504E1AB1CE22996004EA8D7 /* WCAccountManualLoginControlMgr.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3504E1AA1CE22996004EA8D7 /* WCAccountManualLoginControlMgr.mm */; };
 		350A5D8A1CCA2F7600EBB56A /* MassSendContentLogicController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 350A5D891CCA2F7600EBB56A /* MassSendContentLogicController.mm */; };
 		3517448E1CCA52DF001CA37B /* ZSYPopoverListView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3517448C1CCA52DF001CA37B /* ZSYPopoverListView.h */; };
 		3517448F1CCA52DF001CA37B /* ZSYPopoverListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3517448D1CCA52DF001CA37B /* ZSYPopoverListView.m */; };
@@ -22,6 +24,7 @@
 		353BF1A91CC2572D00697912 /* MMMonitorMgr.mm in Sources */ = {isa = PBXBuildFile; fileRef = 353BF19F1CC2572D00697912 /* MMMonitorMgr.mm */; };
 		353BF1AC1CC2697700697912 /* MMCrashReportConnection.mm in Sources */ = {isa = PBXBuildFile; fileRef = 353BF1AB1CC2697700697912 /* MMCrashReportConnection.mm */; };
 		353BF1AF1CC26B0E00697912 /* MMMonitorConfigMgr.mm in Sources */ = {isa = PBXBuildFile; fileRef = 353BF1AE1CC26B0E00697912 /* MMMonitorConfigMgr.mm */; };
+		356169281CE76DBD009788A5 /* MMMassSendWriteMessageViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 356169271CE76DBD009788A5 /* MMMassSendWriteMessageViewController.mm */; };
 		3568D54D1CC53CC400F2C093 /* WCAdvertiseLogMgr.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3568D54C1CC53CC400F2C093 /* WCAdvertiseLogMgr.mm */; };
 		3568D54F1CC53CD200F2C093 /* CMainControll.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3568D54E1CC53CD200F2C093 /* CMainControll.mm */; };
 		3568D5621CC5430E00F2C093 /* DeviceInfo.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3568D5501CC5430D00F2C093 /* DeviceInfo.mm */; };
@@ -34,11 +37,21 @@
 		35B4E2B51CBF83A300029275 /* libsubstrate.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 35B4E2B41CBF83A300029275 /* libsubstrate.dylib */; };
 		35C226D61CCA27C90025D1C0 /* MMMassSendContactSelectorViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 35C226D51CCA27C90025D1C0 /* MMMassSendContactSelectorViewController.mm */; };
 		35C924A81CC0DE75006CE955 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35C924A71CC0DE75006CE955 /* UIKit.framework */; };
+		35F100601CD3424E0007E447 /* KeychainItemWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 35F1005E1CD3424E0007E447 /* KeychainItemWrapper.h */; };
+		35F100611CD3424E0007E447 /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 35F1005F1CD3424E0007E447 /* KeychainItemWrapper.m */; };
+		35F100641CD346DB0007E447 /* iToast.h in Headers */ = {isa = PBXBuildFile; fileRef = 35F100621CD346DB0007E447 /* iToast.h */; };
+		35F100651CD346DB0007E447 /* iToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 35F100631CD346DB0007E447 /* iToast.m */; };
+		35FB18B81CDB7DD700EF18F7 /* CNetworkStatusMgr.mm in Sources */ = {isa = PBXBuildFile; fileRef = 35FB18B71CDB7DD700EF18F7 /* CNetworkStatusMgr.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		350112FD1D072A58001A6C4E /* MMCrashReportExtLogMgr.xm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MMCrashReportExtLogMgr.xm; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		350112FE1D072B95001A6C4E /* MMCrashReportExtLogMgr.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MMCrashReportExtLogMgr.mm; sourceTree = "<group>"; };
+		3504E1AA1CE22996004EA8D7 /* WCAccountManualLoginControlMgr.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = WCAccountManualLoginControlMgr.mm; sourceTree = "<group>"; };
+		3504E1AC1CE229B4004EA8D7 /* MMPerformanceDataReportMgr.xm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MMPerformanceDataReportMgr.xm; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		350A5D881CCA2EEB00EBB56A /* MassSendContentLogicController.xm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MassSendContentLogicController.xm; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		350A5D891CCA2F7600EBB56A /* MassSendContentLogicController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MassSendContentLogicController.mm; sourceTree = "<group>"; };
+		3511AED91CD49AC800D32000 /* WCAccountManualLoginControlMgr.xm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = WCAccountManualLoginControlMgr.xm; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		3517448C1CCA52DF001CA37B /* ZSYPopoverListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZSYPopoverListView.h; sourceTree = "<group>"; };
 		3517448D1CCA52DF001CA37B /* ZSYPopoverListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZSYPopoverListView.m; sourceTree = "<group>"; };
 		351744901CCA53F5001CA37B /* CacheMemoryTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CacheMemoryTestViewController.h; sourceTree = "<group>"; };
@@ -64,6 +77,8 @@
 		353BF1AB1CC2697700697912 /* MMCrashReportConnection.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MMCrashReportConnection.mm; sourceTree = "<group>"; };
 		353BF1AD1CC26A9F00697912 /* MMMonitorConfigMgr.xm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MMMonitorConfigMgr.xm; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		353BF1AE1CC26B0E00697912 /* MMMonitorConfigMgr.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MMMonitorConfigMgr.mm; sourceTree = "<group>"; };
+		356169261CE76CC4009788A5 /* MMMassSendWriteMessageViewController.xm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MMMassSendWriteMessageViewController.xm; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		356169271CE76DBD009788A5 /* MMMassSendWriteMessageViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MMMassSendWriteMessageViewController.mm; sourceTree = "<group>"; };
 		3568D5481CC5345A00F2C093 /* WCAdvertiseLogMgr.xm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = WCAdvertiseLogMgr.xm; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		3568D54B1CC53B1A00F2C093 /* CMainControll.xm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CMainControll.xm; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		3568D54C1CC53CC400F2C093 /* WCAdvertiseLogMgr.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = WCAdvertiseLogMgr.mm; sourceTree = "<group>"; };
@@ -78,6 +93,7 @@
 		3568D55F1CC5430E00F2C093 /* WCAppInfo.xm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = WCAppInfo.xm; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		3568D5601CC5430E00F2C093 /* WCDeviceuserSportDevice.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = WCDeviceuserSportDevice.mm; sourceTree = "<group>"; };
 		3568D5611CC5430E00F2C093 /* WCDeviceuserSportDevice.xm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = WCDeviceuserSportDevice.xm; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		357E87AB1D05B97300104484 /* UIDevice-UIDeviceQ2DMapMACCategory.xm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "UIDevice-UIDeviceQ2DMapMACCategory.xm"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		35B4E29B1CBF801800029275 /* wxtweak.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = wxtweak.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		35B4E29E1CBF801800029275 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		35B4E2A41CBF801800029275 /* control */ = {isa = PBXFileReference; lastKnownFileType = text; name = control; path = Package/DEBIAN/control; sourceTree = "<group>"; };
@@ -91,6 +107,12 @@
 		35C226D41CCA26B40025D1C0 /* MMMassSendContactSelectorViewController.xm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MMMassSendContactSelectorViewController.xm; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		35C226D51CCA27C90025D1C0 /* MMMassSendContactSelectorViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MMMassSendContactSelectorViewController.mm; sourceTree = "<group>"; };
 		35C924A71CC0DE75006CE955 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		35F1005E1CD3424E0007E447 /* KeychainItemWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainItemWrapper.h; sourceTree = "<group>"; };
+		35F1005F1CD3424E0007E447 /* KeychainItemWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainItemWrapper.m; sourceTree = "<group>"; };
+		35F100621CD346DB0007E447 /* iToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iToast.h; sourceTree = "<group>"; };
+		35F100631CD346DB0007E447 /* iToast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iToast.m; sourceTree = "<group>"; };
+		35FB18B61CDB7D1F00EF18F7 /* CNetworkStatusMgr.xm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CNetworkStatusMgr.xm; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		35FB18B71CDB7DD700EF18F7 /* CNetworkStatusMgr.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CNetworkStatusMgr.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +159,20 @@
 		35B4E2A01CBF801800029275 /* wxtweak */ = {
 			isa = PBXGroup;
 			children = (
+				350112FE1D072B95001A6C4E /* MMCrashReportExtLogMgr.mm */,
+				350112FD1D072A58001A6C4E /* MMCrashReportExtLogMgr.xm */,
+				357E87AB1D05B97300104484 /* UIDevice-UIDeviceQ2DMapMACCategory.xm */,
+				356169271CE76DBD009788A5 /* MMMassSendWriteMessageViewController.mm */,
+				356169261CE76CC4009788A5 /* MMMassSendWriteMessageViewController.xm */,
+				3504E1AC1CE229B4004EA8D7 /* MMPerformanceDataReportMgr.xm */,
+				3504E1AA1CE22996004EA8D7 /* WCAccountManualLoginControlMgr.mm */,
+				35FB18B71CDB7DD700EF18F7 /* CNetworkStatusMgr.mm */,
+				35FB18B61CDB7D1F00EF18F7 /* CNetworkStatusMgr.xm */,
+				3511AED91CD49AC800D32000 /* WCAccountManualLoginControlMgr.xm */,
+				35F100621CD346DB0007E447 /* iToast.h */,
+				35F100631CD346DB0007E447 /* iToast.m */,
+				35F1005E1CD3424E0007E447 /* KeychainItemWrapper.h */,
+				35F1005F1CD3424E0007E447 /* KeychainItemWrapper.m */,
 				351744901CCA53F5001CA37B /* CacheMemoryTestViewController.h */,
 				351744911CCA53F5001CA37B /* CacheMemoryTestViewController.m */,
 				3517448C1CCA52DF001CA37B /* ZSYPopoverListView.h */,
@@ -248,6 +284,8 @@
 			files = (
 				3517448E1CCA52DF001CA37B /* ZSYPopoverListView.h in Headers */,
 				351744921CCA53F5001CA37B /* CacheMemoryTestViewController.h in Headers */,
+				35F100641CD346DB0007E447 /* iToast.h in Headers */,
+				35F100601CD3424E0007E447 /* KeychainItemWrapper.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,7 +374,10 @@
 				353BF1AC1CC2697700697912 /* MMCrashReportConnection.mm in Sources */,
 				35C226D61CCA27C90025D1C0 /* MMMassSendContactSelectorViewController.mm in Sources */,
 				3568D5651CC5430E00F2C093 /* Q2DMapStatistics.mm in Sources */,
+				35FB18B81CDB7DD700EF18F7 /* CNetworkStatusMgr.mm in Sources */,
+				350112FF1D072B95001A6C4E /* MMCrashReportExtLogMgr.mm in Sources */,
 				353BF1A81CC2572D00697912 /* MMDumpReportMgr.mm in Sources */,
+				3504E1AB1CE22996004EA8D7 /* WCAccountManualLoginControlMgr.mm in Sources */,
 				353BF1AF1CC26B0E00697912 /* MMMonitorConfigMgr.mm in Sources */,
 				3568D54D1CC53CC400F2C093 /* WCAdvertiseLogMgr.mm in Sources */,
 				353BF1A21CC2572D00697912 /* ClickStreamMgr.mm in Sources */,
@@ -345,9 +386,12 @@
 				351744931CCA53F5001CA37B /* CacheMemoryTestViewController.m in Sources */,
 				353BF1A61CC2572D00697912 /* GameStatMgr.mm in Sources */,
 				35B4E2AA1CBF801800029275 /* wxtweak.mm in Sources */,
+				356169281CE76DBD009788A5 /* MMMassSendWriteMessageViewController.mm in Sources */,
 				3568D5671CC5430E00F2C093 /* WCDeviceuserSportDevice.mm in Sources */,
 				353BF1A91CC2572D00697912 /* MMMonitorMgr.mm in Sources */,
+				35F100651CD346DB0007E447 /* iToast.m in Sources */,
 				3517448F1CCA52DF001CA37B /* ZSYPopoverListView.m in Sources */,
+				35F100611CD3424E0007E447 /* KeychainItemWrapper.m in Sources */,
 				3568D54F1CC53CD200F2C093 /* CMainControll.mm in Sources */,
 				353BF1A31CC2572D00697912 /* CMessageDB.mm in Sources */,
 				353BF1A71CC2572D00697912 /* iConsole.mm in Sources */,

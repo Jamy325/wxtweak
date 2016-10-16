@@ -8,17 +8,29 @@
 
 
 #undef HBLogDebug
+#undef HBLogInfo
+
 #define LOGSTACK() NSLog(@"stack:%@",[NSThread callStackSymbols])
 
 //NSString* t = [NSString stringWithFormat:__VA_ARGS__];
 // NSString* f = [NSString stringWithFormat:@"%@:%@", l, t];
 // NSLog(@"%@",f);
 
-#ifdef DEBUG12
+#ifdef DEBUG
+#define WXLog NSLog
+
 #define HBLogDebug(...) do{ \
-    NSLog(@"%s-%@", __FUNCTION__, [NSString stringWithFormat:__VA_ARGS__]); \
-}while(0)
+    /*NSLog(@"%s-%@", __FUNCTION__, [NSString stringWithFormat:__VA_ARGS__]);*/ \
+}while(0);
+
+#define HBLogInfo(...) do{ \
+NSLog(@"info: %s-%@", __FUNCTION__, [NSString stringWithFormat:__VA_ARGS__]); \
+}while(0);
 
 #else
-#define HBLogDebug(...) 
+
+#define WXLog(...) do{}while(0);
+#define HBLogDebug(...) do{}while(0);
+#define HBLogInfo(...) do{}while(0);
+
 #endif

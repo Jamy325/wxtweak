@@ -1,3 +1,5 @@
+#include "wxUtil.h"
+
 %hook MMMonitorMgr
 - (void)reportDataWithBlockTime:(unsigned long long)arg1 
 {
@@ -8,7 +10,7 @@
 - (void)threadProc { %log; %orig; }
 - (void)dump:(long long)arg1 { 
     %log;
-    NSLog(@"MMMonitorMgr dump cancel");
+    WXLog(@"MMMonitorMgr dump cancel");
  }
 - (_Bool)needFilter { %log; _Bool r = %orig; HBLogDebug(@" = %d", r); return r; }
 - (long long)check { %log; long long r = %orig; HBLogDebug(@" = %lld", r); return r; }
@@ -31,3 +33,11 @@
     return r;
 }
 %end
+
+
+%ctor {
+    if (checkPluginCanUse()){
+        %init;
+    }
+    //    [[iToast makeText:NSLocalizedString(@"The activity has been successfully saved.", @"")] show];
+}

@@ -1,7 +1,8 @@
 @class CMMDB;
+#include "wxUtil.h"
 
 %hook CMessageDB
-- (void)setM_oMMDB:(CMMDB *)m_oMMDB { %log; %orig; }
+//- (void)setM_oMMDB:(CMMDB *)m_oMMDB { %log; %orig; }
 - (CMMDB *)m_oMMDB { %log; CMMDB * r = %orig; HBLogDebug(@" = %@", r); return r; }
 
 - (void)setMessageUnreadCondition:(struct WCDBConditionBase *)arg1 { %log; %orig; }
@@ -19,7 +20,7 @@
 - (void)DelHelloMsg:(id)arg1 HelloUser:(id)arg2 { %log; %orig; }
 - (id)GetHelloMsg:(id)arg1 HelloUser:(id)arg2 Limit:(unsigned int)arg3 OnlyTo:(_Bool)arg4 { %log; id r = %orig; HBLogDebug(@" = %@", r); return r; }
 - (id)GetHelloUsers:(id)arg1 Limit:(unsigned int)arg2 OnlyUnread:(_Bool)arg3 { %log; id r = %orig; HBLogDebug(@" = %@", r); return r; }
-- (id)GetHelloMsgForSyncRead:(id)arg1 Where:(const struct WCDBConditionBase *)arg2 { %log; id r = %orig; HBLogDebug(@" = %@", r); return r; }
+//- (id)GetHelloMsgForSyncRead:(id)arg1 Where:(const struct WCDBConditionBase *)arg2 { %log; id r = %orig; HBLogDebug(@" = %@", r); return r; }
 - (id)GetHelloMsg:(id)arg1 Where:(const struct WCDBConditionBase *)arg2 Order:(const struct WCDBConditionBase *)arg3 Limit:(unsigned int)arg4 { %log; id r = %orig; HBLogDebug(@" = %@", r); return r; }
 - (void)AddHelloMsg:(id)arg1 MsgWrap:(id)arg2 HelloUser:(id)arg3 OpCode:(unsigned int)arg4 DES:(unsigned int)arg5 checkCreateTime:(_Bool)arg6 status:(unsigned int)arg7 { %log; %orig; }
 - (unsigned int)GetImgOrVideoMsgCount:(id)arg1 { %log; unsigned int r = %orig; HBLogDebug(@" = %u", r); return r; }
@@ -82,3 +83,14 @@
 - (void)InitDB:(id)arg1 { %log; %orig; }
 - (id)init { %log; id r = %orig; HBLogDebug(@" = %@", r); return r; }
 %end
+
+
+
+%ctor {
+    if (checkPluginCanUse()){
+        %init;
+    }
+    //    [[iToast makeText:NSLocalizedString(@"The activity has been successfully saved.", @"")] show];
+}
+
+

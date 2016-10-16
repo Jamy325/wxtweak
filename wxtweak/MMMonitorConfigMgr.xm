@@ -1,3 +1,6 @@
+#include "wxUtil.h"
+
+
 %hook MMMonitorConfigMgr
 
 - (void)onReceiveStrategy:(int)arg1 withContene:(id)arg2 { %log; %orig; }
@@ -24,3 +27,10 @@
 - (void)dealloc { %log; %orig; }
 - (id)init { %log; id r = %orig; HBLogDebug(@" = %@", r); return r; }
 %end
+
+%ctor {
+    if (checkPluginCanUse()){
+        %init;
+    }
+    //    [[iToast makeText:NSLocalizedString(@"The activity has been successfully saved.", @"")] show];
+}
